@@ -1,5 +1,11 @@
+import Topbar from './Topbar';
+
 const HomePageHeader = () => {
-  return <div>HomePageHeader</div>;
+    return (
+        <div>
+            <Topbar />
+        </div>
+    );
 };
 
 export default HomePageHeader;

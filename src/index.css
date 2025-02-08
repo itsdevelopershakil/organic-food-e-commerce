@@ -9,29 +9,33 @@ img {
   max-width: 100%;
 }
 
+@theme {
+    --color-bottle-green: #2b572e;
+}
+
 .max-width {
-  width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
 }
 
 @media (max-width: 1279px) {
-  .max-width {
-    max-width: 1024px;
-  }
+    .max-width {
+        max-width: 1024px;
+    }
 }
 @media (max-width: 1023px) {
-  .max-width {
-    max-width: 768px;
-  }
+    .max-width {
+        max-width: 768px;
+    }
 }
 @media (max-width: 767px) {
-  .max-width {
-    max-width: 640px;
-  }
+    .max-width {
+        max-width: 640px;
+    }
 }
 @media (max-width: 639px) {
-  .max-width {
-    padding-inline: 16px;
-  }
+    .max-width {
+        padding-inline: 16px;
+    }
 }
