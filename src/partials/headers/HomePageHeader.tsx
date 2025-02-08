@@ -3,7 +3,7 @@ import Topbar from './Topbar';
 const HomePageHeader = () => {
     return (
         <div>
-            <Topbar />
+            <Topbar theme="primary" />
         </div>
     );
 };
