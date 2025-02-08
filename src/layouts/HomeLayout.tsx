@@ -1,14 +1,16 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
+import HomePageFooter from "../partials/footers/HomePageFooter";
 import HomePageHeader from "../partials/headers/HomePageHeader";
 
-const Layout = () => {
+const HomeLayout = () => {
   return (
     <>
       <HomePageHeader />
       <Outlet />
       <ScrollRestoration />
+      <HomePageFooter />
     </>
   );
 };
 
-export default Layout;
+export default HomeLayout;
