@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import bg from "../../assets/images/footer/BG.png";
 import Logo from "../../assets/images/logos/Logo-White.png";
 
-const HomePageFooter = () => {
+const Footer = () => {
   return (
     <div
       style={{
@@ -53,4 +53,4 @@ const HomePageFooter = () => {
   );
 };
 
-export default HomePageFooter;
+export default Footer;

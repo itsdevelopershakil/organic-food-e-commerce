@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import HomePageFooter from "../partials/footers/HomePageFooter";
+import Footer from "../partials/footer/Footer";
 import HomePageHeader from "../partials/headers/HomePageHeader";
 
 const HomeLayout = () => {
@@ -8,7 +8,7 @@ const HomeLayout = () => {
       <HomePageHeader />
       <Outlet />
       <ScrollRestoration />
-      <HomePageFooter />
+      <Footer />
     </>
   );
 };
