@@ -8,7 +8,7 @@ const HomeLayout = () => {
       <HomePageHeader />
       <Outlet />
       <ScrollRestoration />
-      <Footer />
+      <Footer home={true} />
     </>
   );
 };
