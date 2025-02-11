@@ -15,7 +15,7 @@ import Topbar from './Topbar';
 
 const HomePageHeader = () => {
     const [openSideBar, setOpentSideBar] = useState(false);
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     return (
         <>
             <header>
