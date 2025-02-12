@@ -1,8 +1,8 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoClose } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router-dom';
-import PhoneIcon from '../assets/icons/PhoneIcon';
-import Divider from './Divider';
+import PhoneIcon from '../../assets/icons/PhoneIcon';
+import Divider from '../../components/Divider';
 
 type sidebarProps = {
     close: (value: boolean) => void;

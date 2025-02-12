@@ -7,10 +7,10 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
     return (
-        <ul className={`hidden md:flex gap-2 text-sm ${className}`}>
+        <ul className={`hidden md:flex gap-2 lg:gap-8 text-sm ${className}`}>
             <li>
                 <NavLink className="hover:text-primary duration-300" to="/">
-                    Home <IoIosArrowDown className="inline" />
+                    Home
                 </NavLink>
             </li>
             <li>
