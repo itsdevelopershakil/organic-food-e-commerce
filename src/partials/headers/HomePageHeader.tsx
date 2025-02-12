@@ -9,8 +9,9 @@ import SearchIcon from '../../assets/icons/SearchIcon';
 import ShoppingBag from '../../assets/icons/ShoppingBag';
 import logo from '../../assets/images/logos/Logo.png';
 import Divider from '../../components/Divider';
-import Sidebar from '../../components/Sidebar';
+import BottomBar from './BottomBar';
 import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
 const HomePageHeader = () => {
@@ -37,7 +38,7 @@ const HomePageHeader = () => {
                                         to="tel:+(219)555-0114"
                                         className="gap-2 items-center hidden sm:flex"
                                     >
-                                        <PhoneIcon className="size-5" />{' '}
+                                        <PhoneIcon className="size-5" />
                                         <span className="hidden lg:block">
                                             (219) 555-0114
                                         </span>
@@ -83,56 +84,73 @@ const HomePageHeader = () => {
                         </div>
                     </nav>
                 ) : (
-                    <nav>
-                        <div className="max-width">
-                            <div className="flex items-center justify-between py-5">
-                                <div>
-                                    <img
-                                        src={logo}
-                                        alt="Ecobarzar"
-                                        className="w-[120px] sm:w-[183px]"
-                                    />
-                                </div>
-                                <div className="flex w-[498px] h-[45px] border border-[#E6E6E6] rounded-md ">
-                                    <div className="relative w-[calc(100%_-_98px)]">
-                                        <input
-                                            className="px-10 py-2 text-sm size-full outline-none"
-                                            type="text"
-                                            placeholder="Search"
+                    <nav className="shadow-sm">
+                        <div className="border-b border-[#E5E5E5]">
+                            <div className="max-width">
+                                <div className="flex items-center justify-between py-5">
+                                    <div>
+                                        <img
+                                            src={logo}
+                                            alt="Ecobarzar"
+                                            className="w-[120px] sm:w-[183px]"
                                         />
-                                        <CiSearch className="absolute top-1/2 left-4 text-xl text-[#1a1a1a] -translate-y-1/2" />
                                     </div>
-                                    <button
-                                        className="w-[98px] h-full rounded-md bg-primary border border-primary text-white text-sm font-semibold shrink-0 flex justify-center items-center"
-                                        type="button"
-                                    >
-                                        Search
-                                    </button>
-                                </div>
-                                <div className="flex gap-4 items-center">
-                                    <button>
-                                        <FavouriteIcon className="size-5 sm:size-6 cursor-pointer" />
-                                    </button>
-                                    <Divider className="h-6 w-px bg-black" />
-                                    <div className="flex gap-3">
-                                        <button className="relative">
-                                            <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
-                                            <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
-                                                0
-                                            </div>
+                                    <div className="hidden lg:flex w-[498px] h-[45px] border border-[#E6E6E6] rounded-md ">
+                                        <div className="relative w-[calc(100%_-_98px)]">
+                                            <input
+                                                className="px-10 py-2 text-sm size-full outline-none"
+                                                type="text"
+                                                placeholder="Search"
+                                            />
+                                            <CiSearch className="absolute top-1/2 left-4 text-xl text-[#1a1a1a] -translate-y-1/2" />
+                                        </div>
+                                        <button
+                                            className="w-[98px] h-full rounded-md bg-primary border border-primary text-white text-sm font-semibold shrink-0 flex justify-center items-center"
+                                            type="button"
+                                        >
+                                            Search
                                         </button>
-                                        <div>
-                                            <p className="text-[#4d4d4d] text-xs">
-                                                Shopping cart:
-                                            </p>
-                                            <p className="text-sm font-medium">
-                                                $ 57.00
-                                            </p>
+                                    </div>
+                                    <div className="flex gap-4 items-center">
+                                        <button className="block lg:hidden">
+                                            <SearchIcon className="size-4 sm:size-5 cursor-pointer" />
+                                        </button>
+                                        <button>
+                                            <FavouriteIcon className="size-5 sm:size-6 cursor-pointer" />
+                                        </button>
+                                        <Divider className="h-6 w-px bg-black md:block hidden" />
+                                        <div className="flex gap-3">
+                                            <button className="relative">
+                                                <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
+                                                <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
+                                                    0
+                                                </div>
+                                            </button>
+                                            <div className="hidden md:block">
+                                                <p className="text-[#4d4d4d] text-xs">
+                                                    Shopping cart:
+                                                </p>
+                                                <p className="text-sm font-medium">
+                                                    $ 57.00
+                                                </p>
+                                            </div>
+                                            <div className="block mt-2 md:hidden">
+                                                <button
+                                                    type="button"
+                                                    onClick={() =>
+                                                        setOpentSideBar(true)
+                                                    }
+                                                >
+                                                    <FaBars className="size-5 sm:size-6 text-[#1a1a1a] cursor-pointer" />
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <BottomBar />
                     </nav>
                 )}
             </header>
