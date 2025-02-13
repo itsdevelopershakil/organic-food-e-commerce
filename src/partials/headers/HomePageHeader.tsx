@@ -10,13 +10,15 @@ import ShoppingBag from '../../assets/icons/ShoppingBag';
 import logo from '../../assets/images/logos/Logo.png';
 import Divider from '../../components/Divider';
 import BottomBar from './BottomBar';
+import CartBar from './CartBar';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
 const HomePageHeader = () => {
     const [openSideBar, setOpentSideBar] = useState(false);
-    const isLoggedIn = true;
+    const [openCartBar, setOpentCartBar] = useState(false);
+    const isLoggedIn = false;
     return (
         <>
             <header>
@@ -119,7 +121,12 @@ const HomePageHeader = () => {
                                             <FavouriteIcon className="size-5 sm:size-6 cursor-pointer" />
                                         </button>
                                         <Divider className="h-6 w-px bg-black md:block hidden" />
-                                        <div className="flex gap-3">
+                                        <div
+                                            className="flex gap-3 cursor-pointer"
+                                            onClick={() =>
+                                                setOpentCartBar(true)
+                                            }
+                                        >
                                             <button className="relative">
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
@@ -155,6 +162,7 @@ const HomePageHeader = () => {
                 )}
             </header>
             <Sidebar close={setOpentSideBar} open={openSideBar} />
+            <CartBar close={setOpentCartBar} open={openCartBar} />
         </>
     );
 };
