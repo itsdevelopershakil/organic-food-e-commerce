@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -19,20 +19,6 @@ const HomePageHeader = () => {
     const [openSideBar, setOpentSideBar] = useState(false);
     const [openCartBar, setOpentCartBar] = useState(false);
     const isLoggedIn = false;
-
-    useEffect(() => {
-        if (openCartBar) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cleanup on unmount
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, [openCartBar]);
-
     return (
         <>
             <header>
@@ -143,7 +129,7 @@ const HomePageHeader = () => {
                                         >
                                             <button className="relative">
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
-                                                <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
+                                                <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white cursor-pointer">
                                                     0
                                                 </div>
                                             </button>
@@ -155,16 +141,16 @@ const HomePageHeader = () => {
                                                     $ 57.00
                                                 </p>
                                             </div>
-                                            <div className="block mt-2 md:hidden">
-                                                <button
-                                                    type="button"
-                                                    onClick={() =>
-                                                        setOpentSideBar(true)
-                                                    }
-                                                >
-                                                    <FaBars className="size-5 sm:size-6 text-[#1a1a1a] cursor-pointer" />
-                                                </button>
-                                            </div>
+                                        </div>
+                                        <div className="block mt-2 md:hidden">
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    setOpentSideBar(true)
+                                                }
+                                            >
+                                                <FaBars className="size-5 sm:size-6 text-[#1a1a1a] cursor-pointer" />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
