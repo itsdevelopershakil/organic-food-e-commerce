@@ -47,9 +47,8 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                                     <span className="font-bold">12.00</span>
                                 </p>
                             </div>
-                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border border-[#CCCCCC] flex justify-center items-center">
-                                <RxCross2 className="text-[#666666]" 
-                                />
+                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center">
+                                <RxCross2 />
                             </button>
                         </div>
                         <Divider className="h-px w-full bg-[#E6E6E6]" />
@@ -68,9 +67,8 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                                     <span className="font-bold">14.00</span>
                                 </p>
                             </div>
-                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border border-[#CCCCCC] flex justify-center items-center">
-                                <RxCross2 className="text-[#666666]" 
-                                />
+                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center">
+                                <RxCross2 />
                             </button>
                         </div>
                         <Divider className="h-px w-full bg-[#E6E6E6]" />
