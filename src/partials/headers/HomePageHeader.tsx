@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -19,6 +19,20 @@ const HomePageHeader = () => {
     const [openSideBar, setOpentSideBar] = useState(false);
     const [openCartBar, setOpentCartBar] = useState(false);
     const isLoggedIn = false;
+
+    useEffect(() => {
+        if (openCartBar) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [openCartBar]);
+
     return (
         <>
             <header>

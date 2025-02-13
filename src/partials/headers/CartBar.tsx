@@ -33,8 +33,8 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                 <div className="pt-3">
                     <div>
                         <div className="flex gap-2 items-center mb-3">
-                            <div className="w-[90px] md:w-[120px]">
-                                <img className="" src={orange} alt="" />
+                            <div className="w-[90px] md:w-[120px] shrink-0">
+                                <img className="w-full" src={orange} alt="" />
                             </div>
                             <div className="text-xs md:text-sm">
                                 <p className="text-[#1A1A1A]">
@@ -47,7 +47,7 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                                     <span className="font-bold">12.00</span>
                                 </p>
                             </div>
-                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center">
+                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center shrink-0">
                                 <RxCross2 />
                             </button>
                         </div>
@@ -55,8 +55,8 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                     </div>
                     <div>
                         <div className="flex gap-2 items-center mb-3">
-                            <div className="w-[90px] md:w-[120px]">
-                                <img className="" src={apple} alt="" />
+                            <div className="w-[90px] md:w-[120px] shrink-0">
+                                <img className="w-full" src={apple} alt="" />
                             </div>
                             <div className="text-xs md:text-sm">
                                 <p className="text-[#1A1A1A]">Green Apple</p>
@@ -67,7 +67,7 @@ const CartBar: React.FC<cartbarProps> = ({ close, open }) => {
                                     <span className="font-bold">14.00</span>
                                 </p>
                             </div>
-                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center">
+                            <button className="ml-auto cursor-pointer w-6 h-6 rounded-full border flex justify-center items-center shrink-0">
                                 <RxCross2 />
                             </button>
                         </div>
