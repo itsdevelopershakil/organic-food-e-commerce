@@ -73,7 +73,7 @@ const CartBar = () => {
         dispatch(setCartItems(data));
     }, []);
 
-    const handleRemove = (id) => {
+    const handleRemove = (id: number) => {
         dispatch(removeCartItem(id));
         toast.success('Item Removed Successfully!');
     };
