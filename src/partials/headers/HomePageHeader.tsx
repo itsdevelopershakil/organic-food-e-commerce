@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import FavouriteIcon from '../../assets/icons/FavouriteIcon';
 import PhoneIcon from '../../assets/icons/PhoneIcon';
@@ -9,6 +10,8 @@ import SearchIcon from '../../assets/icons/SearchIcon';
 import ShoppingBag from '../../assets/icons/ShoppingBag';
 import logo from '../../assets/images/logos/Logo.png';
 import Divider from '../../components/Divider';
+import { setCartOpen } from '../../redux/features/header/cartSlice';
+import { RootState } from '../../redux/store';
 import BottomBar from './BottomBar';
 import CartBar from './CartBar';
 import Navbar from './Navbar';
@@ -16,9 +19,24 @@ import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
 const HomePageHeader = () => {
+    const dispatch = useDispatch();
+    const { open } = useSelector((state: RootState) => state.cart);
+
     const [openSideBar, setOpentSideBar] = useState(false);
-    const [openCartBar, setOpentCartBar] = useState(false);
-    const isLoggedIn = false;
+    const isLoggedIn = true;
+
+    useEffect(() => {
+        if (open || openSideBar) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [open, openSideBar]);
     return (
         <>
             <header>
@@ -58,7 +76,13 @@ const HomePageHeader = () => {
                                             </button>
                                         </li>
                                         <li>
-                                            <button className="relative">
+                                            <button
+                                                className="relative"
+                                                type="button"
+                                                onClick={() =>
+                                                    dispatch(setCartOpen(true))
+                                                }
+                                            >
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
                                                     0
@@ -124,7 +148,7 @@ const HomePageHeader = () => {
                                         <div
                                             className="flex gap-3 cursor-pointer"
                                             onClick={() =>
-                                                setOpentCartBar(true)
+                                                dispatch(setCartOpen(true))
                                             }
                                         >
                                             <button className="relative">
@@ -162,7 +186,7 @@ const HomePageHeader = () => {
                 )}
             </header>
             <Sidebar close={setOpentSideBar} open={openSideBar} />
-            <CartBar close={setOpentCartBar} open={openCartBar} />
+            <CartBar />
         </>
     );
 };
