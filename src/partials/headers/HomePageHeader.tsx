@@ -85,7 +85,7 @@ const HomePageHeader = () => {
                                             >
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
-                                                    {cartItems.length}
+                                                    {cartItems.length || 0}
                                                 </div>
                                             </button>
                                         </li>
@@ -154,7 +154,7 @@ const HomePageHeader = () => {
                                             <button className="relative">
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white cursor-pointer">
-                                                    {cartItems.length}
+                                                    {cartItems.length || 0}
                                                 </div>
                                             </button>
                                             <div className="hidden md:block">
