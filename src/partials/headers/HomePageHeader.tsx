@@ -20,7 +20,7 @@ import Topbar from './Topbar';
 
 const HomePageHeader = () => {
     const dispatch = useDispatch();
-    const { open } = useSelector((state: RootState) => state.cart);
+    const { open, cartItems } = useSelector((state: RootState) => state.cart);
 
     const [openSideBar, setOpentSideBar] = useState(false);
     const isLoggedIn = true;
@@ -85,7 +85,7 @@ const HomePageHeader = () => {
                                             >
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white">
-                                                    0
+                                                    {cartItems.length}
                                                 </div>
                                             </button>
                                         </li>
@@ -154,7 +154,7 @@ const HomePageHeader = () => {
                                             <button className="relative">
                                                 <ShoppingBag className="size-6 sm:size-7 cursor-pointer" />
                                                 <div className="absolute top-0 right-0 text-xs bg-primary h-4 w-4 rounded-full flex items-center justify-center text-white cursor-pointer">
-                                                    0
+                                                    {cartItems.length}
                                                 </div>
                                             </button>
                                             <div className="hidden md:block">
