@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router-dom';
 import PhoneIcon from '../../assets/icons/PhoneIcon';
 import Divider from '../../components/Divider';
+import useOutsideClick from '../../hooks/useOutsideClick';
 
 type sidebarProps = {
     close: (value: boolean) => void;
@@ -15,6 +16,8 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
     const [dropdownHeight, setDropdownHeight] = useState(0);
     const dropdownRef = useRef<HTMLUListElement>(null);
 
+    const boxRef = useRef(null);
+
     useEffect(() => {
         if (dropdownRef.current) {
             setDropdownHeight(dropdownRef.current.scrollHeight);
@@ -25,6 +28,8 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
         setToggleDropDown(!toggleDropDown);
     };
 
+    useOutsideClick(boxRef, () => close(false));
+
     return (
         <div
             className={`fixed block md:hidden top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[999999] ${
@@ -32,6 +37,7 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
             }`}
         >
             <div
+                ref={boxRef}
                 className={`h-full w-full max-w-[300px] bg-white ml-auto relative duration-300 ${
                     open ? 'translate-x-0' : 'translate-x-full'
                 }`}

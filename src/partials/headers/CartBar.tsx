@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
 import { RxCross2 } from 'react-icons/rx';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import apple from '../../assets/images/products/apple.png';
 import orange from '../../assets/images/products/orange.png';
 import Divider from '../../components/Divider';
+import useOutsideClick from '../../hooks/useOutsideClick';
 import {
     removeCartItem,
     setCartItems,
@@ -23,6 +24,7 @@ type DataObject = {
 const CartBar = () => {
     const dispatch = useDispatch();
     const { open, cartItems } = useSelector((state: RootState) => state.cart);
+    const boxRef = useRef(null);
 
     const data = [
         {
@@ -82,6 +84,8 @@ const CartBar = () => {
         return acc + parseInt(curr.price);
     }, 0);
 
+    useOutsideClick(boxRef, () => dispatch(setCartOpen(false)));
+
     return (
         <div
             className={`fixed block top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[999999] ${
@@ -89,6 +93,7 @@ const CartBar = () => {
             }`}
         >
             <div
+                ref={boxRef}
                 className={`h-full max-w-[300px] md:max-w-[456px] flex flex-col bg-white ml-auto relative duration-300 p-10 ${
                     open ? 'translate-x-0' : 'translate-x-full'
                 }`}
