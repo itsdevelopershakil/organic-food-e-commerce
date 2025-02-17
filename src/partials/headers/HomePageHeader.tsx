@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { CiSearch } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +16,7 @@ import { RootState } from '../../redux/store';
 import BottomBar from './BottomBar';
 import CartBar from './CartBar';
 import Navbar from './Navbar';
+import ProfileDrawer from './ProfileDrawer';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
@@ -23,6 +25,18 @@ const HomePageHeader = () => {
     const { open, cartItems } = useSelector((state: RootState) => state.cart);
 
     const [openSideBar, setOpentSideBar] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
+    const [openProfile, setOpenProfile] = useState(false);
+
+    const handleSearch = (e: MouseEvent<HTMLButtonElement>): void => {
+        e.preventDefault();
+        if (searchValue) {
+            console.log(searchValue);
+        } else {
+            toast.error('Please enter value!');
+        }
+    };
+
     const isLoggedIn = true;
 
     useEffect(() => {
@@ -90,8 +104,20 @@ const HomePageHeader = () => {
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
-                                                <ProfileIcon className="size-5 sm:size-6 cursor-pointer" />
+                                            <button className="relative z-[999999]">
+                                                <span
+                                                    onClick={() =>
+                                                        setOpenProfile(
+                                                            !openProfile
+                                                        )
+                                                    }
+                                                >
+                                                    <ProfileIcon className="size-5 sm:size-6 cursor-pointer" />
+                                                </span>
+                                                <ProfileDrawer
+                                                    open={openProfile}
+                                                    close={setOpenProfile}
+                                                />
                                             </button>
                                         </li>
                                         <li className="block md:hidden">
@@ -127,12 +153,19 @@ const HomePageHeader = () => {
                                                 className="px-10 py-2 text-sm size-full outline-none"
                                                 type="text"
                                                 placeholder="Search"
+                                                value={searchValue}
+                                                onChange={(e) =>
+                                                    setSearchValue(
+                                                        e.target.value
+                                                    )
+                                                }
                                             />
                                             <CiSearch className="absolute top-1/2 left-4 text-xl text-[#1a1a1a] -translate-y-1/2" />
                                         </div>
                                         <button
                                             className="w-[98px] h-full rounded-md bg-primary border border-primary text-white text-sm font-semibold shrink-0 flex justify-center items-center"
                                             type="button"
+                                            onClick={handleSearch}
                                         >
                                             Search
                                         </button>

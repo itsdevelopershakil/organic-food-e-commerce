@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoClose } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router-dom';
@@ -10,6 +11,20 @@ type sidebarProps = {
 };
 
 const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
+    const [toggleDropDown, setToggleDropDown] = useState(false);
+    const [dropdownHeight, setDropdownHeight] = useState(0);
+    const dropdownRef = useRef<HTMLUListElement>(null);
+
+    useEffect(() => {
+        if (dropdownRef.current) {
+            setDropdownHeight(dropdownRef.current.scrollHeight);
+        }
+    }, []);
+
+    const handleDropdown = () => {
+        setToggleDropDown(!toggleDropDown);
+    };
+
     return (
         <div
             className={`fixed block md:hidden top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[999999] ${
@@ -28,7 +43,7 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
                 >
                     <IoClose className="size-6 cursor-pointer text-[#1a1a1a]" />
                 </button>
-                <ul className={`text-sm space-y-3 pt-10`}>
+                <ul className={`text-sm pt-10`}>
                     <li>
                         <Link
                             to="tel:+(219)555-0114"
@@ -53,23 +68,47 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
                             className="hover:text-primary duration-300 flex items-center justify-between p-4 border-b border-gray-300"
                             to="/shop"
                         >
-                            Shop <IoIosArrowDown className="inline" />
+                            Shop
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink
-                            className="hover:text-primary duration-300 flex items-center justify-between p-4 border-b border-gray-300"
-                            to="/pages"
+                    <li className="border-b border-gray-300">
+                        <div
+                            onClick={handleDropdown}
+                            className="hover:text-primary duration-300 flex items-center justify-between p-4  cursor-pointer"
                         >
                             Pages <IoIosArrowDown className="inline" />
-                        </NavLink>
+                        </div>
+                        <ul
+                            ref={dropdownRef}
+                            className={`px-6 duration-300 overflow-hidden`}
+                            style={{
+                                height: `${
+                                    toggleDropDown
+                                        ? `${dropdownHeight}px`
+                                        : '0px'
+                                }`,
+                            }}
+                        >
+                            <li className="border-b border-gray-200 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
+                                <NavLink to="/sign-in">Sign In</NavLink>
+                            </li>
+                            <li className="border-b border-gray-200 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
+                                <NavLink to="/sign-up">Sign Up</NavLink>
+                            </li>
+                            <li className="border-b border-gray-200 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
+                                <NavLink to="/faq">FAQ</NavLink>
+                            </li>
+                            <li className="border-gray-300 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
+                                <NavLink to="/contact">Contact</NavLink>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <NavLink
                             className="hover:text-primary duration-300 flex items-center justify-between p-4 border-b border-gray-300"
                             to="/blog"
                         >
-                            Blog <IoIosArrowDown className="inline" />
+                            Blog
                         </NavLink>
                     </li>
                     <li>
