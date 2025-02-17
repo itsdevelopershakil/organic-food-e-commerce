@@ -14,11 +14,12 @@ type ProfileDrawerProps = {
 };
 
 const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ open, close }) => {
-  const profileRef = useRef<HTMLElement>(null);
+  const profileRef = useRef(null);
 
   useOutsideClick(profileRef, () => close(false));
   return (
     <div
+      ref={profileRef}
       className={`absolute bg-white w-[240px] shadow-lg rounded-lg right-0 top-[110%] duration-300 origin-center ${
         open ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-0"
       }`}
