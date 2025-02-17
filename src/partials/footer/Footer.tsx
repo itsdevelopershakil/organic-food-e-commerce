@@ -23,6 +23,7 @@ import Visa from "../../assets/images/payment-cards/Visa.png";
 import Divider from "../../components/Divider";
 import SubcriptionForm from "./SubcriptionForm";
 
+import { ChangeEvent, FormEvent, useState } from "react";
 import CallIcon from "../../assets/images/footer/Call-Icon.png";
 import LocationIcon from "../../assets/images/footer/Location-Icon.png";
 import MashroomShape from "../../assets/images/footer/mashroom-shape.png";
@@ -33,6 +34,19 @@ type FooterProps = {
 };
 
 const Footer: React.FC<FooterProps> = ({ home }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputValue) {
+      console.log(inputValue);
+    }
+  };
+
   return (
     <>
       {home ? (
@@ -75,25 +89,30 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
                   (303) 555-0105
                 </Link>
               </div>
-              <div className="w-full lg:w-1/2 rounded-lg border border-primary text-sm p-5">
+              <form
+                onSubmit={handleSubscribe}
+                className="w-full lg:w-1/2 rounded-lg border border-primary text-sm p-5"
+              >
                 <img src={MessageIcon} alt="Message Icon" />
                 <h1 className="mt-4 mb-[10px] font-medium">
                   Subscribe Newsletter
                 </h1>
                 <div className="flex rounded-[500px] border border-[#e6e6e6]">
                   <input
-                    type="text"
+                    type="email"
+                    value={inputValue}
                     className="h-full outline-none bg-transparent px-5 w-[calc(100%_-_100px)] sm:w-auto sm:grow text-sm py-3 sm:py-[14px] shrink placeholder:text-xs sm:placeholder:text-sm"
                     placeholder="Your email address"
+                    onChange={handleInput}
                   />
                   <button
-                    type="button"
+                    type="submit"
                     className="h-full shrink-0 rounded-[500px] bg-primary text-white text-sm px-5 sm:px-10 cursor-pointer py-3 sm:py-[14px] border border-primary"
                   >
                     Subscribe
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
