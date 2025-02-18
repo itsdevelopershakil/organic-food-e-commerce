@@ -17,6 +17,7 @@ import BottomBar from './BottomBar';
 import CartBar from './CartBar';
 import Navbar from './Navbar';
 import ProfileDrawer from './ProfileDrawer';
+import SearchBox from './SearchBox';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
@@ -25,6 +26,7 @@ const HomePageHeader = () => {
     const { open, cartItems } = useSelector((state: RootState) => state.cart);
 
     const [openSideBar, setOpentSideBar] = useState(false);
+    const [openSearchBox, setOpenSearchBox] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [openProfile, setOpenProfile] = useState(false);
 
@@ -37,10 +39,10 @@ const HomePageHeader = () => {
         }
     };
 
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     useEffect(() => {
-        if (open || openSideBar) {
+        if (open || openSideBar || openSearchBox) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
@@ -50,9 +52,10 @@ const HomePageHeader = () => {
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [open, openSideBar]);
+    }, [open, openSideBar, openSearchBox]);
     return (
         <>
+            <SearchBox close={setOpenSearchBox} open={openSearchBox} />
             <header>
                 <Topbar theme="primary" />
                 {isLoggedIn ? (
@@ -80,7 +83,12 @@ const HomePageHeader = () => {
 
                                     <ul className="flex justify-center items-center gap-3 sm:gap-5 *:flex *:items-center">
                                         <li>
-                                            <button>
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    setOpenSearchBox(true)
+                                                }
+                                            >
                                                 <SearchIcon className="size-4 sm:size-5 cursor-pointer" />
                                             </button>
                                         </li>
@@ -171,7 +179,13 @@ const HomePageHeader = () => {
                                         </button>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <button className="block lg:hidden">
+                                        <button
+                                            className="block lg:hidden"
+                                            type="button"
+                                            onClick={() =>
+                                                setOpenSearchBox(true)
+                                            }
+                                        >
                                             <SearchIcon className="size-4 sm:size-5 cursor-pointer" />
                                         </button>
                                         <button>
