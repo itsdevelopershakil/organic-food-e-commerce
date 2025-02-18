@@ -39,7 +39,7 @@ const HomePageHeader = () => {
         }
     };
 
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     useEffect(() => {
         if (open || openSideBar || openSearchBox) {
