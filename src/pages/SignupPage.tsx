@@ -7,14 +7,14 @@ const SignupPage = () => {
     const [showPass, setShowPass] = useState(true);
 
     return (
-        <div className="flex justify-center items-center p-10 py-20 md:p-20">
+        <div className="flex justify-center items-center p-5 py-20 md:p-20">
             <div className="border border-[#f2f2f2] shadow-[#00260314] shadow-2xl p-6 max-w-[520px]">
                 <h1 className="text-center text-2xl md:text-[36px] font-semibold text-[#1a1a1a]">
                     Sign In
                 </h1>
                 <div className="mt-5">
                     <form>
-                        <div className="relative text-xs sm:text-sm md:text-base">
+                        <div className="relative sm:text-sm md:text-base">
                             <input
                                 className="w-full py-2 px-4 outline-0 border border-[#E6E6E6] rounded-md mb-3"
                                 type="text"
@@ -54,13 +54,13 @@ const SignupPage = () => {
                             </Link>
                         </div>
                         <button
-                            className="mt-2 md:mt-5 bg-primary w-full text-white py-2 md:py-3 px-4 text-xs md:text-sm rounded-[43px] hover:bg-green-600 duration-300 cursor-pointer"
+                            className="mt-2 md:mt-5 bg-primary w-full text-white py-2 md:py-3 px-4 text-sm rounded-[43px] hover:bg-green-600 duration-300 cursor-pointer"
                             type="submit"
                         >
                             Login
                         </button>
                     </form>
-                    <p className="mt-4 md:mt-6 p-2 text-center text-xs md:text-sm text-[#999]">
+                    <p className="mt-2 md:mt-6 p-2 text-center text-xs md:text-sm text-[#999]">
                         Don't have account?{' '}
                         <Link
                             to="create-account"
