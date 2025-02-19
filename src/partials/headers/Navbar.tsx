@@ -28,7 +28,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                             <NavLink to="/sign-in">Sign In</NavLink>
                         </li>
                         <li className="border-b border-gray-300 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
-                            <NavLink to="/sign-up">Sign Up</NavLink>
+                            <NavLink to="/create-account">
+                                Create Account
+                            </NavLink>
                         </li>
                         <li className="border-b border-gray-300 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
                             <NavLink to="/faq">FAQ</NavLink>
