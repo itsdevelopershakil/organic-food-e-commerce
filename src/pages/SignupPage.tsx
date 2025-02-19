@@ -3,8 +3,28 @@ import { FaRegEyeSlash } from 'react-icons/fa';
 import { IoEyeOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
+interface FormState {
+    [key: string]: string; // Allow dynamic keys for form fields
+}
+
 const SignupPage = () => {
-    const [showPass, setShowPass] = useState(true);
+    const [showPass, setShowPass] = useState(false);
+    const [formValue, setFormValue] = useState<FormState>({
+        email: '',
+        password: '',
+        // rememberMe: false,
+    });
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormValue((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
     return (
         <div className="flex justify-center items-center p-5 py-20 md:p-20">
@@ -13,21 +33,27 @@ const SignupPage = () => {
                     Sign In
                 </h1>
                 <div className="mt-5">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="relative sm:text-sm md:text-base">
                             <input
                                 className="w-full py-2 px-4 outline-0 border border-[#E6E6E6] rounded-md mb-3"
                                 type="text"
+                                name="email"
+                                value={formValue.email}
+                                onChange={handleChange}
                                 placeholder="Email"
                             />
                             <input
                                 className="w-full py-2 px-4 outline-0 border border-[#E6E6E6] rounded-md md:mb-3"
                                 type={showPass ? 'text' : 'password'}
+                                name="password"
+                                value={formValue.password}
+                                onChange={handleChange}
                                 placeholder="Password"
                             />
                             <button
                                 type="button"
-                                className="absolute right-[22px] bottom-[10px] md:bottom-[24px] md:right-[24px] cursor-pointer"
+                                className="absolute right-[22px] bottom-[14px] md:bottom-[24px] md:right-[24px] cursor-pointer"
                                 onClick={() => setShowPass(!showPass)}
                             >
                                 {showPass ? (
