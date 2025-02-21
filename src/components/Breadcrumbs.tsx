@@ -14,7 +14,6 @@ const divStyle = {
 const Breadcrumbs = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
-    console.log(pathnames);
 
     return (
         <div style={divStyle} className="bg-no-repeat h-[80px]  md:h-[120px]">
