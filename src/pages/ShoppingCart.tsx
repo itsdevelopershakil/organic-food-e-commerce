@@ -138,9 +138,47 @@ const ShoppingCart = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="w-1/3">
-                            <h3>Cart total</h3>
+                        <div className="w-1/3  my-6">
+                            <div className="border border-[#E6E6E6] p-6 rounded-lg text-[#1a1a1a]">
+                                <h3 className="text-xl font-medium">
+                                    Cart Total
+                                </h3>
+                                <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
+                                    <p className="text-[#4D4D4D]">Subtotal: </p>
+                                    <p>$84.00</p>
+                                </div>
+                                <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
+                                    <p className="text-[#4D4D4D]">Shipping </p>
+                                    <p>Free</p>
+                                </div>
+                                <div className="flex justify-between mt-2 p-3 border-[#e6e6e6]">
+                                    <p className="text-[#4D4D4D]">Total</p>
+                                    <p className="font-semibold">$84.00</p>
+                                </div>
+                                <button className="mt-5 bg-primary w-full text-center text-white font-semibold rounded-[43px] cursor-pointer hover:border hover:border-gray-300 hover:text-primary hover:bg-white hover:shadow-sm duration-300 p-4">
+                                    Proceed To Checkout
+                                </button>
+                            </div>
                         </div>
+                    </div>
+
+                    <div className="flex">
+                        <div className="w-2/3 rounded-lg border border-[#E6E6E6] m-6 p-6 flex items-center">
+                            <p className="w-1/4 text-xl font-medium text-[#1a1a1a]">
+                                Coupon Code
+                            </p>
+                            <div className="relative w-3/4">
+                                <input
+                                    type="text"
+                                    className="w-full px-6 py-3 rounded-[46px] outline-none border border-[#E6E6E6]"
+                                    placeholder="Enter Code"
+                                />
+                                <button className="absolute right-0 px-6 py-3 bg-[#333] text-white rounded-[43px] cursor-pointer hover:shadow-md hover:bg-white hover:border border-gray-200 hover:text-[#333] duration-300">
+                                    Apply Coupon
+                                </button>
+                            </div>
+                        </div>
+                        <div className="w-1/3"></div>
                     </div>
                 </div>
             </div>
