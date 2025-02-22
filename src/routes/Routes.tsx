@@ -5,6 +5,7 @@ import ErrorPage from '../pages/ErrorPage';
 import HomePage from '../pages/HomePage';
 import ShoppingCart from '../pages/ShoppingCart';
 import SignupPage from '../pages/SignupPage';
+import Test from '../pages/Test';
 
 export const routes = createBrowserRouter([
     {
@@ -27,6 +28,7 @@ export const routes = createBrowserRouter([
                 path: '/shopping-cart',
                 element: <ShoppingCart />,
             },
+            { path: '/test', element: <Test /> },
             {
                 path: '*',
                 element: <ErrorPage />,
