@@ -67,7 +67,7 @@ const ShoppingCart = () => {
                                 <div>
                                     {cart.map((item) => (
                                         <div key={item.id} className="*p-4">
-                                            <div className="grid grid-cols-12 gap-4 items-center">
+                                            <div className="grid grid-cols-12 gap-4 items-center p-5">
                                                 <div className="col-span-5 flex gap-4 items-center">
                                                     <img
                                                         src={item.image}
@@ -109,7 +109,7 @@ const ShoppingCart = () => {
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div className="col-span-2">
+                                                <div className="col-span-2 p-4">
                                                     ${item.price.toFixed(2)}
                                                 </div>
                                                 <div className="col-span-1">
