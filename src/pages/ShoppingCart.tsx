@@ -49,7 +49,7 @@ const ShoppingCart = () => {
         if (inputValue) {
             console.log(inputValue);
         } else {
-            toast.error('Please enter valid Email!');
+            toast.error('Please enter valid Coupon!');
         }
     };
 
@@ -77,8 +77,13 @@ const ShoppingCart = () => {
                                     </p>
                                     <p className="col-span-1"></p>
                                 </div>
+                                {cartItems.length === 0 && (
+                                    <div className="text-[#666] text-center p-20">
+                                        No Items found
+                                    </div>
+                                )}
 
-                                <div className=" h-">
+                                <div className="">
                                     {cartItems.map((item, index) => (
                                         <div key={index} className="*p-4">
                                             <div className="grid grid-cols-12 gap-3 lg:gap-4 items-center p-3 lg:p-5">
@@ -109,8 +114,8 @@ const ShoppingCart = () => {
                                                 <div className="col-span-2 sm:col-span-1 md : p -1 text-sm md:text-base">
                                                     ${item.price}
                                                 </div>
-                                                <div className="col-span-5 sm:col-span-3 px-10 md:px-14 lg:px-12">
-                                                    <div className="w-[90px] md:w-[120px] border border-[#E6E6E6] rounded-[170px] p-1 md:p-2 text-[#1a1a1a] flex justify-between items-center text-sm md:text-base">
+                                                <div className="col-span-5 sm:col-span-3 px-6 sm:px-12 md:px-14 lg:px-12">
+                                                    <div className="w-[80px] sm:w-[90px] md:w-[120px] border border-[#E6E6E6] rounded-[170px] p-1 md:p-2 text-[#1a1a1a] flex justify-between items-center text-sm md:text-base">
                                                         <button
                                                             className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#F2F2F2] cursor-pointer"
                                                             onClick={() =>
