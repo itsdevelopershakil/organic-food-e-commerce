@@ -1,48 +1,50 @@
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { RxCross2 } from 'react-icons/rx';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import greenCapsicum from '../assets/images/green-capsicum.png';
-import redCapsicum from '../assets/images/red-capsicum.png';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Divider from '../components/Divider';
+import {
+    removeCartItem,
+    updateCartItemQuantity,
+} from '../redux/features/header/cartSlice';
+import { RootState } from '../redux/store';
 
 // Define the CartItem type
-interface CartItem {
-    id: number;
-    name: string;
-    price: number;
-    quantity: number;
-    image: string;
-}
-
-const initialCart: CartItem[] = [
-    {
-        id: 1,
-        name: 'Green Capsicum',
-        price: 1444.0,
-        quantity: 5,
-        image: greenCapsicum, // Replace with actual image URL
-    },
-    {
-        id: 2,
-        name: 'Red Capsicum',
-        price: 1444.0,
-        quantity: 5,
-        image: redCapsicum, // Replace with actual image URL
-    },
-];
-
 const ShoppingCart = () => {
-    const [cart, setCart] = useState<CartItem[]>(initialCart);
+    const dispatch = useDispatch();
+    const { cartItems } = useSelector((state: RootState) => state.cart);
+    const [subTotal, setSubTotal] = useState(0);
+    const [inputValue, setInputValue] = useState('');
 
-    const updateQuantity = (id: number, change: number) => {
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id
-                    ? { ...item, quantity: Math.max(1, item.quantity + change) }
-                    : item
-            )
+    const updateQuantity = (index: number, quantity: number) => {
+        if (quantity > 0) {
+            dispatch(updateCartItemQuantity({ index, quantity }));
+        } else {
+            dispatch(removeCartItem(index)); // Remove item if quantity is 0
+        }
+    };
+
+    useEffect(() => {
+        const subtotals = cartItems.reduce(
+            (acc, item) => acc + item.subtotal,
+            0
         );
+        setSubTotal(subtotals);
+    }, [cartItems]);
+
+    const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value);
+    };
+
+    const handleCouponForm = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (inputValue) {
+            console.log(inputValue);
+        } else {
+            toast.error('Please enter valid Email!');
+        }
     };
 
     return (
@@ -70,9 +72,9 @@ const ShoppingCart = () => {
                                     <p className="col-span-1"></p>
                                 </div>
 
-                                <div>
-                                    {cart.map((item) => (
-                                        <div key={item.id} className="*p-4">
+                                <div className=" h-">
+                                    {cartItems.map((item, index) => (
+                                        <div key={index} className="*p-4">
                                             <div className="grid grid-cols-12 gap-3 lg:gap-4 items-center p-3 lg:p-5">
                                                 <div className="relative col-span-5 flex flex-col  sm:flex-row sm:gap-4 items-center">
                                                     <div className=" absolute top-0 left-0 sm:hidden md:col-span-1">
@@ -86,12 +88,12 @@ const ShoppingCart = () => {
                                                         className="w-14 h-14 md:w-20 md:h-20 lg:w-25 lg:h-25"
                                                     />
                                                     <p className="text-xs sm:text-sm">
-                                                        {item.name}
+                                                        {item.title}
                                                     </p>
                                                 </div>
 
                                                 <div className="col-span-2 sm:col-span-1 md : p -1 text-sm md:text-base">
-                                                    ${item.price.toFixed(2)}
+                                                    ${item.price}
                                                 </div>
                                                 <div className="col-span-5 sm:col-span-3 px-10 md:px-14 lg:px-12">
                                                     <div className="w-[90px] md:w-[120px] border border-[#E6E6E6] rounded-[170px] p-1 md:p-2 text-[#1a1a1a] flex justify-between items-center text-sm md:text-base">
@@ -99,8 +101,9 @@ const ShoppingCart = () => {
                                                             className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#F2F2F2] cursor-pointer"
                                                             onClick={() =>
                                                                 updateQuantity(
-                                                                    item.id,
-                                                                    -1
+                                                                    index,
+                                                                    item.quantity -
+                                                                        1
                                                                 )
                                                             }
                                                         >
@@ -113,8 +116,10 @@ const ShoppingCart = () => {
                                                             className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#F2F2F2] cursor-pointer"
                                                             onClick={() =>
                                                                 updateQuantity(
-                                                                    item.id,
-                                                                    1
+                                                                    index,
+                                                                    Number(
+                                                                        item.quantity
+                                                                    ) + 1
                                                                 )
                                                             }
                                                         >
@@ -123,7 +128,7 @@ const ShoppingCart = () => {
                                                     </div>
                                                 </div>
                                                 <div className="hidden sm:block col-span-2 lg:p-6">
-                                                    ${item.price.toFixed(2)}
+                                                    ${item.subtotal.toFixed(2)}
                                                 </div>
                                                 <div className="hidden sm:block col-span-1">
                                                     <div className="w-6 h-6 border rounded-full border-[#CCCCCC] flex justify-center items-center cursor-pointer">
@@ -158,7 +163,9 @@ const ShoppingCart = () => {
                                 </h3>
                                 <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
                                     <p className="text-[#4D4D4D]">Subtotal: </p>
-                                    <p>$84.00</p>
+                                    <p className="font-semibold">
+                                        ${subTotal.toFixed(2)}
+                                    </p>
                                 </div>
                                 <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
                                     <p className="text-[#4D4D4D]">Shipping </p>
@@ -166,7 +173,9 @@ const ShoppingCart = () => {
                                 </div>
                                 <div className="flex justify-between mt-2 p-3 border-[#e6e6e6]">
                                     <p className="text-[#4D4D4D]">Total</p>
-                                    <p className="font-semibold">$84.00</p>
+                                    <p className="font-semibold">
+                                        ${subTotal.toFixed(2)}
+                                    </p>
                                 </div>
                                 <button className="mt-5 bg-primary w-full text-center text-white font-semibold rounded-[43px] cursor-pointer hover:border hover:border-gray-300 hover:text-primary hover:bg-white hover:shadow-sm duration-300 p-4 text-sm sm:text-base">
                                     Proceed To Checkout
@@ -181,14 +190,14 @@ const ShoppingCart = () => {
                                 Coupon Code
                             </p>
                             <form
-                                // onSubmit={handleSubscribe}
+                                onSubmit={handleCouponForm}
                                 className="w-full flex bg-white rounded-[43px] border border-[#e6e6e6] grow"
                             >
                                 <input
-                                    type="email"
-                                    // value={inputValue}
-                                    // onChange={handleInput}
-                                    className="h-full outline-none bg-transparent px-5 w-[calc(100%_-_100px)] sm:w-auto sm:grow text-sm py-4 sm:py-[14px] shrink"
+                                    type="text"
+                                    value={inputValue}
+                                    onChange={handleInput}
+                                    className="outline-none bg-transparent px-5 w-[calc(100%_-_100px)] sm:w-auto sm:grow text-sm py-4 sm:py-[16px] shrink"
                                     placeholder="Enter Code"
                                 />
                                 <button

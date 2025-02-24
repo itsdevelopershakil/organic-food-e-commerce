@@ -17,7 +17,7 @@ import { RootState } from '../../redux/store';
 type DataObject = {
     image: string;
     title: string;
-    quantity: string;
+    quantity: number;
     price: string;
 };
 
@@ -72,8 +72,16 @@ const CartBar = () => {
     ];
 
     useEffect(() => {
-        dispatch(setCartItems(data));
-    }, []);
+        dispatch(
+            setCartItems(
+                data.map((item) => ({
+                    ...item,
+                    quantity: Number(item.quantity), // Ensure quantity is a number
+                    subtotal: Number(item.price) * Number(item.quantity), // Ensure subtotal is included
+                }))
+            )
+        );
+    }, [dispatch]); // Add dispatch to dependencies (good practice)
 
     const handleRemove = (id: number) => {
         dispatch(removeCartItem(id));
