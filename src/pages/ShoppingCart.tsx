@@ -23,6 +23,7 @@ const ShoppingCart = () => {
             dispatch(updateCartItemQuantity({ index, quantity }));
         } else {
             dispatch(removeCartItem(index)); // Remove item if quantity is 0
+            toast.success('Item Removed!');
         }
     };
 
@@ -36,6 +37,11 @@ const ShoppingCart = () => {
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
+    };
+
+    const handleRemove = (index: number) => {
+        dispatch(removeCartItem(index));
+        toast.success('Item Removed!');
     };
 
     const handleCouponForm = (e: FormEvent<HTMLFormElement>) => {
@@ -78,9 +84,17 @@ const ShoppingCart = () => {
                                             <div className="grid grid-cols-12 gap-3 lg:gap-4 items-center p-3 lg:p-5">
                                                 <div className="relative col-span-5 flex flex-col  sm:flex-row sm:gap-4 items-center">
                                                     <div className=" absolute top-0 left-0 sm:hidden md:col-span-1">
-                                                        <div className="w-6 h-6 border rounded-full border-[#CCCCCC] flex justify-center items-center cursor-pointer">
+                                                        <button
+                                                            className="w-6 h-6 border rounded-full border-[#CCCCCC] flex justify-center items-center cursor-pointer"
+                                                            type="button"
+                                                            onClick={() =>
+                                                                handleRemove(
+                                                                    index
+                                                                )
+                                                            }
+                                                        >
                                                             <RxCross2 className="text-[#666666]" />
-                                                        </div>
+                                                        </button>
                                                     </div>
                                                     <img
                                                         src={item.image}
@@ -131,9 +145,15 @@ const ShoppingCart = () => {
                                                     ${item.subtotal.toFixed(2)}
                                                 </div>
                                                 <div className="hidden sm:block col-span-1">
-                                                    <div className="w-6 h-6 border rounded-full border-[#CCCCCC] flex justify-center items-center cursor-pointer">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() =>
+                                                            handleRemove(index)
+                                                        }
+                                                        className="w-6 h-6 border rounded-full border-[#CCCCCC] flex justify-center items-center cursor-pointer"
+                                                    >
                                                         <RxCross2 className="text-[#666666]" />
-                                                    </div>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <Divider className="mx-4 h-[1px] bg-[#E6E6E6]" />
