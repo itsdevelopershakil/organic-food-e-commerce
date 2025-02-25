@@ -93,9 +93,9 @@ const HomePageHeader = () => {
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <Link to="/wishlist">
                                                 <FavouriteIcon className="size-5 sm:size-6 cursor-pointer" />
-                                            </button>
+                                            </Link>
                                         </li>
                                         <li>
                                             <button
@@ -188,9 +188,9 @@ const HomePageHeader = () => {
                                         >
                                             <SearchIcon className="size-4 sm:size-5 cursor-pointer" />
                                         </button>
-                                        <button>
+                                        <Link to="/wishlist">
                                             <FavouriteIcon className="size-5 sm:size-6 cursor-pointer" />
-                                        </button>
+                                        </Link>
                                         <Divider className="h-6 w-px bg-black md:block hidden" />
                                         <div
                                             className="flex gap-3 cursor-pointer"
