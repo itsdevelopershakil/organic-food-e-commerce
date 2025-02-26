@@ -1,4 +1,3 @@
-import { RootState } from '@reduxjs/toolkit/query';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 import { TiTick } from 'react-icons/ti';
@@ -8,6 +7,7 @@ import product2 from '../assets/images/products/product2.png';
 import product3 from '../assets/images/products/product3.png';
 import Divider from '../components/Divider';
 import { addToCart } from '../redux/features/header/cartSlice';
+import { RootState } from '../redux/store';
 
 interface CartItem {
     title: string;
@@ -17,13 +17,20 @@ interface CartItem {
     subtotal: number;
 }
 
+interface WishlistItem {
+    title: string;
+    image: string;
+    price: string;
+    stock: boolean;
+}
+
 const Wishlist = () => {
     const dispatch = useDispatch();
     const { cartItems }: { cartItems: CartItem[] } = useSelector(
         (state: RootState) => state.cart
     );
 
-    const data = [
+    const data: WishlistItem[] = [
         {
             title: 'Green Capsicum',
             image: product1,
@@ -44,12 +51,7 @@ const Wishlist = () => {
         },
     ];
 
-    const handleAddToCart = (item: {
-        title: string;
-        image: string;
-        price: string;
-        stock: boolean;
-    }) => {
+    const handleAddToCart = (item: WishlistItem) => {
         dispatch(
             addToCart({
                 image: item.image,
@@ -78,7 +80,7 @@ const Wishlist = () => {
                                 Stock Status
                             </p>
                         </div>
-                        {data.map((item, index) => (
+                        {data.map((item: WishlistItem, index) => (
                             <div key={index} className="px-6">
                                 <div className="grid grid-cols-12 py-4 items-center">
                                     <div className="flex flex-col md:flex-row sm:gap-3 lg:gap-5 md:justify-start items-center col-span-5">
