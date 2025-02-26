@@ -1,11 +1,28 @@
+import { RootState } from '@reduxjs/toolkit/query';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
+import { TiTick } from 'react-icons/ti';
+import { useDispatch, useSelector } from 'react-redux';
 import product1 from '../assets/images/products/product1.png';
 import product2 from '../assets/images/products/product2.png';
 import product3 from '../assets/images/products/product3.png';
 import Divider from '../components/Divider';
+import { addToCart } from '../redux/features/header/cartSlice';
+
+interface CartItem {
+    title: string;
+    image: string;
+    price: string;
+    quantity: number;
+    subtotal: number;
+}
 
 const Wishlist = () => {
+    const dispatch = useDispatch();
+    const { cartItems }: { cartItems: CartItem[] } = useSelector(
+        (state: RootState) => state.cart
+    );
+
     const data = [
         {
             title: 'Green Capsicum',
@@ -26,6 +43,23 @@ const Wishlist = () => {
             stock: false,
         },
     ];
+
+    const handleAddToCart = (item: {
+        title: string;
+        image: string;
+        price: string;
+        stock: boolean;
+    }) => {
+        dispatch(
+            addToCart({
+                image: item.image,
+                title: item.title,
+                price: item.price,
+                quantity: 1,
+                subtotal: Number(item.price),
+            })
+        );
+    };
 
     return (
         <div>
@@ -73,15 +107,58 @@ const Wishlist = () => {
                                             )}
                                         </div>
 
-                                        <button
-                                            className="hidden sm:block ml-auto text-xs md:text-sm bg-primary text-white px-4 py-2 md:px-8 shrink-0 md:py-4 rounded-[43px] cursor-pointer disabled:bg-[#F2F2F2] disabled:text-[#B3B3B3]"
-                                            disabled={!item.stock}
-                                        >
-                                            Add to Cart
-                                        </button>
-                                        <button className="ml-auto sm:hidden">
-                                            <FaShoppingCart className="text-[#b3b3b3]" />
-                                        </button>
+                                        {cartItems.some(
+                                            (cartItem) =>
+                                                cartItem.title === item.title
+                                        ) ? (
+                                            <button
+                                                className="hidden sm:flex gap-1 items-center ml-auto text-xs md:text-sm  text-primary border border-primary px-4 py-2 md:px-4 shrink-0 md:py-4 rounded-[43px] cursor-pointer disabled:bg-[#F2F2F2] disabled:text-[#B3B3B3]"
+                                                disabled={!item.stock}
+                                                onClick={() =>
+                                                    handleAddToCart(item)
+                                                }
+                                            >
+                                                Added to Cart{' '}
+                                                <TiTick className="text-primary" />
+                                            </button>
+                                        ) : (
+                                            <button
+                                                className="hidden sm:block ml-auto text-xs md:text-sm bg-primary text-white px-4 py-2 md:px-8 shrink-0 md:py-4 rounded-[43px] cursor-pointer disabled:bg-[#F2F2F2] disabled:text-[#B3B3B3]"
+                                                disabled={!item.stock}
+                                                onClick={() =>
+                                                    handleAddToCart(item)
+                                                }
+                                            >
+                                                Add to Cart
+                                            </button>
+                                        )}
+
+                                        {cartItems.some(
+                                            (cartItem) =>
+                                                cartItem.title === item.title
+                                        ) ? (
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    handleAddToCart(item)
+                                                }
+                                                className="ml-auto sm:hidden"
+                                                disabled={!item.stock}
+                                            >
+                                                <TiTick className="text-[#b3b3b3] size-6" />
+                                            </button>
+                                        ) : (
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    handleAddToCart(item)
+                                                }
+                                                className="ml-auto sm:hidden"
+                                                disabled={!item.stock}
+                                            >
+                                                <FaShoppingCart className="text-[#b3b3b3]" />
+                                            </button>
+                                        )}
                                         <div className="ml-auto size-6 border border-[#CCCCCC] rounded-full flex justify-center items-center cursor-pointer">
                                             <RxCross2 />
                                         </div>

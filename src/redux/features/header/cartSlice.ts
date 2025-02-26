@@ -34,6 +34,28 @@ export const cartSlice = createSlice({
                 subtotal: Number(item.price) * Number(item.quantity),
             }));
         },
+        addToCart: (state, action: PayloadAction<CartItem>) => {
+            const { title, price } = action.payload;
+
+            // find existing item by title & price (if products with same title have different prices)
+            const existingItem = state.cartItems.find(
+                (item) => item.title === title && item.price === price
+            );
+
+            if (existingItem) {
+                // if the exists, update quantity & subtotal
+                existingItem.quantity += action.payload.quantity;
+                existingItem.subtotal =
+                    Number(existingItem.price) * existingItem.quantity;
+            } else {
+                // if item doesn't exist, add it to cart
+                state.cartItems.push({
+                    ...action.payload,
+                    subtotal:
+                        Number(action.payload.price) * action.payload.quantity,
+                });
+            }
+        },
         updateCartItemQuantity: (
             state,
             action: PayloadAction<{ index: number; quantity: number }>
@@ -55,6 +77,7 @@ export const cartSlice = createSlice({
 export const {
     setCartOpen,
     setCartItems,
+    addToCart,
     removeCartItem,
     updateCartItemQuantity,
 } = cartSlice.actions;
