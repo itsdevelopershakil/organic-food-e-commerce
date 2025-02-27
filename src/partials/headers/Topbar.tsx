@@ -44,7 +44,7 @@ const Topbar: React.FC<TopbarProps> = ({ theme }) => {
                     </div>
                     <div className="flex gap-2">
                         <div
-                            className="flex gap-2 items-center cursor-pointer relative group"
+                            className="flex gap-2 items-center cursor-pointer relative group z-[999999]"
                             onClick={() =>
                                 setOpenDropdownLang(!openDropdownLang)
                             }
@@ -57,7 +57,7 @@ const Topbar: React.FC<TopbarProps> = ({ theme }) => {
                             />
                         </div>
                         <div
-                            className="flex gap-2 items-center cursor-pointer relative group"
+                            className="flex gap-2 items-center cursor-pointer relative group z-[9999999]"
                             onClick={() =>
                                 setOpenDropdownCurr(!openDropdownCurr)
                             }

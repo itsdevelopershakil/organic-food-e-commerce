@@ -202,9 +202,12 @@ const ShoppingCart = () => {
                                         ${subTotal.toFixed(2)}
                                     </p>
                                 </div>
-                                <button className="mt-5 bg-primary w-full text-center text-white font-semibold rounded-[43px] cursor-pointer hover:border hover:border-gray-300 hover:text-primary hover:bg-white hover:shadow-sm duration-300 p-4 text-sm sm:text-base">
+                                <Link
+                                    to="/checkout"
+                                    className="block mt-5 bg-primary w-full text-center text-white font-semibold rounded-[43px] cursor-pointer hover:border hover:border-gray-300 hover:text-primary hover:bg-white hover:shadow-sm duration-300 p-4 text-sm sm:text-base"
+                                >
                                     Proceed To Checkout
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -103,7 +103,7 @@ const CartBar = () => {
 
     return (
         <div
-            className={`fixed block top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[999999] ${
+            className={`fixed block top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[9999999] ${
                 open ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`}
         >

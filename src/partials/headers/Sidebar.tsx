@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { IoClose } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router-dom';
 import PhoneIcon from '../../assets/icons/PhoneIcon';
@@ -32,7 +32,7 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
 
     return (
         <div
-            className={`fixed block md:hidden top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[999999] ${
+            className={`fixed block md:hidden top-0 left-0 w-full duration-100 h-screen bg-black/50 z-[9999999] ${
                 open ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`}
         >
@@ -82,7 +82,12 @@ const Sidebar: React.FC<sidebarProps> = ({ close, open }) => {
                             onClick={handleDropdown}
                             className="hover:text-primary duration-300 flex items-center justify-between p-4  cursor-pointer"
                         >
-                            Pages <IoIosArrowDown className="inline" />
+                            Pages{' '}
+                            {toggleDropDown ? (
+                                <IoIosArrowUp className="inline" />
+                            ) : (
+                                <IoIosArrowDown className="inline" />
+                            )}
                         </div>
                         <ul
                             ref={dropdownRef}

@@ -1,0 +1,196 @@
+import { Link } from 'react-router-dom';
+import Breadcrumbs from '../components/Breadcrumbs';
+
+import CountryList from '../components/CountryList';
+import Divider from '../components/Divider';
+
+const Checkout = () => {
+    return (
+        <div>
+            <Breadcrumbs />
+            <div className="max-width">
+                <div className="flex p-8 text-[#1A1A1A]">
+                    <div className="w-full lg:w-2/3  my-6 lg:mx-6">
+                        <h3 className="text-2xl font-medium">
+                            Billing Information
+                        </h3>
+                        <div className="grid grid-cols-12 gap-x-4 mt-5">
+                            <div className="col-span-4">
+                                <p className="text-sm pb-2">First Name</p>
+                                <input
+                                    className="outline-0 border border-[#E6E6E6] rounded-[6px] py-2 px-4"
+                                    type="text"
+                                    placeholder="Your first name"
+                                />
+                            </div>
+                            <div className="col-span-4">
+                                <p className="text-sm pb-2">Last Name</p>
+                                <input
+                                    className="outline-0 border border-[#E6E6E6] rounded-[6px] py-2 px-4"
+                                    type="text"
+                                    placeholder="Your last name"
+                                />
+                            </div>
+                            <div className="col-span-4">
+                                <p className="text-sm pb-2">
+                                    Company Name{' '}
+                                    <span className="text-[#999999]">
+                                        (optional)
+                                    </span>
+                                </p>
+                                <input
+                                    className="outline-0 border border-[#E6E6E6] rounded-[6px] py-2 px-4"
+                                    type="text"
+                                    placeholder="Company name"
+                                />
+                            </div>
+                        </div>
+                        <div className="pt-4">
+                            <p className="text-sm mb-2">Street Address</p>
+                            <input
+                                className="w-full border border-[#E6E6E6] outline-0 py-3 px-4  rounded-[6px]"
+                                type="text"
+                                placeholder="Enter Your Address"
+                            />
+                        </div>
+                        <div className="grid grid-cols-12 gap-x-4 pt-4">
+                            <div className="col-span-4">
+                                <CountryList
+                                    country="bangladesh"
+                                    handleChange={() => 'hi'}
+                                />
+                            </div>
+                            <div className="col-span-4">
+                                <p className="text-sm py-2">States</p>
+                                <input
+                                    type="text"
+                                    className="outline-0 border border-[#E6E6E6] w-1/2 py-3 px-4 rounded-[6px]"
+                                />
+                            </div>
+                            <div className="col-span-4">
+                                <p className="text-sm py-2">Zip Code</p>
+                                <input
+                                    type="text"
+                                    placeholder="Zip Code"
+                                    className="outline-0 border border-[#E6E6E6] w-1/2 py-3 px-4 rounded-[6px]"
+                                />
+                            </div>
+                        </div>
+                        <div className="py-4 grid gap-x-4 grid-cols-12">
+                            <div className="col-span-6">
+                                <p className="mb-2 text-sm">Email</p>
+                                <input
+                                    type="email"
+                                    placeholder="Email Address"
+                                    className="w-full outline-0 border border-[#E6E6E6] py-3 px-4 rounded-[6px]"
+                                />
+                            </div>
+                            <div className="col-span-6">
+                                <p className="mb-2 text-sm">Phone</p>
+                                <input
+                                    type="text"
+                                    placeholder="Phone number"
+                                    className="w-full outline-0 border border-[#E6E6E6] py-3 px-4 rounded-[6px]"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex gap-1 items-center pt-2 pb-8">
+                            <input
+                                className="size-5 cursor-pointer"
+                                type="checkbox"
+                            />
+                            <p className="text-sm text-[#4D4D4D]">
+                                Ship to a different address
+                            </p>
+                        </div>
+                        <Divider className="w-full h-px bg-[#E6E6E6]" />
+
+                        <div>
+                            <h3 className="text-2xl font-medium text-[#1a1a1a] pt-8 pb-5">
+                                Additional Info
+                            </h3>
+                            <p className="text-sm text-[#1a1a1a] pb-2">
+                                Order Notes (Optional)
+                            </p>
+                            <textarea
+                                className="w-full outline-0 border border-[#E6E6E6] h-[100px] px-4 py-3 rounded-[6px]"
+                                placeholder="Notes about your order, e.g. special notes for delivery"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div className="w-full lg:w-1/3  my-6 lg:mx-6">
+                        <div className="border border-[#E6E6E6] p-6 rounded-lg text-[#1a1a1a]">
+                            <h3 className="text-xl font-medium">
+                                Order Summery
+                            </h3>
+                            <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
+                                <p className="text-[#4D4D4D]">Subtotal: </p>
+                                <p className="font-semibold">
+                                    {/* ${subTotal.toFixed(2)} */}
+                                </p>
+                            </div>
+                            <div className="flex justify-between mt-2 p-3 border-b border-[#e6e6e6]">
+                                <p className="text-[#4D4D4D]">Shipping </p>
+                                <p>Free</p>
+                            </div>
+                            <div className="flex justify-between mt-2 p-3 border-[#e6e6e6]">
+                                <p className="text-[#4D4D4D]">Total</p>
+                                <p className="font-semibold">
+                                    {/* ${subTotal.toFixed(2)} */}
+                                </p>
+                            </div>
+                            <div className="space-y-2">
+                                <h4 className="text-[#1A1A1A] text-xl font-medium pt-6">
+                                    Payment Method
+                                </h4>
+                                <div className="flex gap-1 text-[#4D4D4D]">
+                                    <input
+                                        type="radio"
+                                        id="cod"
+                                        name="payment_method"
+                                        defaultValue="cod"
+                                        className=" border-white"
+                                    />
+                                    <label htmlFor="cod">
+                                        Cash on Delivery
+                                    </label>
+                                </div>
+                                <div className="flex gap-1 text-[#4D4D4D]">
+                                    <input
+                                        type="radio"
+                                        id="paypal"
+                                        name="payment_method"
+                                        defaultValue="paypal"
+                                        className=" border-white"
+                                    />
+                                    <label htmlFor="paypal">Paypal</label>
+                                </div>
+                                <div className="flex gap-1 text-[#4D4D4D]">
+                                    <input
+                                        type="radio"
+                                        id="amazon-pay"
+                                        name="payment_method"
+                                        defaultValue="amazon-pay"
+                                        className=" border-white"
+                                    />
+                                    <label htmlFor="amazon-pay">
+                                        Amazon Pay
+                                    </label>
+                                </div>
+                            </div>
+                            <Link
+                                to="/checkout"
+                                className="block mt-5 bg-primary w-full text-center text-white font-semibold rounded-[43px] cursor-pointer hover:border hover:border-gray-300 hover:text-primary hover:bg-white hover:shadow-sm duration-300 p-4 text-sm sm:text-base"
+                            >
+                                Place Order
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Checkout;

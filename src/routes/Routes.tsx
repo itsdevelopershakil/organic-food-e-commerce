@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import HomeLayout from '../layouts/HomeLayout';
+import Checkout from '../pages/Checkout';
 import CreateAccount from '../pages/CreateAccount';
 import ErrorPage from '../pages/ErrorPage';
 import HomePage from '../pages/HomePage';
@@ -32,6 +33,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/wishlist',
                 element: <Wishlist />,
+            },
+            {
+                path: '/checkout',
+                element: <Checkout />,
             },
             { path: '/test', element: <Test /> },
             {
