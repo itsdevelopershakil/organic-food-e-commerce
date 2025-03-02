@@ -4,10 +4,10 @@ import About from '../pages/About';
 import Checkout from '../pages/Checkout';
 import CreateAccount from '../pages/CreateAccount';
 import ErrorPage from '../pages/ErrorPage';
+import Faqs from '../pages/Faqs';
 import HomePage from '../pages/HomePage';
 import ShoppingCart from '../pages/ShoppingCart';
 import SignupPage from '../pages/SignupPage';
-import Test from '../pages/Test';
 import Wishlist from '../pages/Wishlist';
 
 export const routes = createBrowserRouter([
@@ -43,7 +43,10 @@ export const routes = createBrowserRouter([
                 path: '/checkout',
                 element: <Checkout />,
             },
-            { path: '/test', element: <Test /> },
+            {
+                path: '/faqs',
+                element: <Faqs />,
+            },
             {
                 path: '*',
                 element: <ErrorPage />,

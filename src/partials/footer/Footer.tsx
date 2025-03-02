@@ -291,7 +291,7 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        to={''}
+                                        to="/faqs"
                                         className="duration-300 hover:text-white"
                                     >
                                         Faqs
