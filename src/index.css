@@ -26,6 +26,19 @@ img {
     max-width: 100%;
 }
 
+/* react slick start  */
+/* .slick-prev,
+.slick-next {
+    display: block !important;
+    background: #000;
+    z-index: 1000; /* Ensure it is above other elements */
+
+/* .slick-next:hover {
+    background: #000;
+} */
+
+/* react slick end  */
+
 @theme {
     --color-bottle-green: #2b572e;
     --color-primary: #00b207;
