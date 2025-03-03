@@ -13,6 +13,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Tickmark from '../assets/images/about/Tickmark';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SimpleSlider from '../components/SimpleSlider';
+import TestimonialSlider from '../components/TestimonialSlider';
 
 const divStyle = {
     backgroundImage: `url(${img2})`,
@@ -58,6 +59,7 @@ const About = () => {
     return (
         <div>
             <Breadcrumbs />
+            {/* about heading section  */}
             <div className="max-width">
                 <div className="flex gap-10 py-20">
                     <div className="w-1/2">
@@ -82,6 +84,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            {/* About Consumer Trust  */}
             <div className="bg-no-repeat" style={divStyle}>
                 <div className="max-width flex justify-end pt-20">
                     <div className="w-1/2 px-4">
@@ -121,10 +124,11 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            {/* Team Section */}
             <div className="border-t border-[#E5E5E5]">
                 <div className="max-width">
                     <div className="flex items-center gap-7 pt-20">
-                        <div className="w-[552px] pt-20">
+                        <div className="w-[40%] shrink-0 pt-20">
                             <h3 className="text-5xl font-semibold text-[#1A1A1A]">
                                 We Delivered, You Enjoy Your Order.
                             </h3>
@@ -169,19 +173,17 @@ const About = () => {
                                 Shop Now <FaArrowRight />
                             </Link>
                         </div>
-                        <div className="mt-10">
-                            <img
-                                src={img3}
-                                alt=""
-                                className="h-[606px] object-cover"
-                            />
+                        <div className="mt-10 shrink-0 w-[60%]">
+                            <img src={img3} alt="" className="object-contain" />
                         </div>
                     </div>
                 </div>
-                <div className="bg-linear-to-r from-[#F2F2F2] to-[#FFFFFF]">
+                <div className="bg-linear-to-r from-[#F2F2F2] to-[#FFFFFF] py-20">
                     <div className="max-width">
-                        <h3>Our Awesome Team</h3>
-                        <p>
+                        <h3 className="text-5xl text-center font-semibold text-[#1A1A1A]">
+                            Our Awesome Team
+                        </h3>
+                        <p className="pt-3 w-1/2 mx-auto text-center text-[#666666] mb-0.5">
                             Pellentesque a ante vulputate leo porttitor luctus
                             sed eget eros. Nulla et rhoncus neque. Duis non diam
                             eget est luctus tincidunt a a mi.
@@ -189,6 +191,15 @@ const About = () => {
 
                         <SimpleSlider />
                     </div>
+                </div>
+            </div>
+            {/* Testimonial section  */}
+            <div className="bg-[#F2F2F2]">
+                <div className="max-width py-25">
+                    <h3 className="text-[#1A1A1A] text-5xl font-semibold px-4 mb-0.5">
+                        Client Testimonail
+                    </h3>
+                    <TestimonialSlider />
                 </div>
             </div>
         </div>
