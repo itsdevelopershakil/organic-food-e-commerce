@@ -46,12 +46,12 @@ const Faqs = () => {
         <div>
             <Breadcrumbs />
             <div className="max-width">
-                <div className="pt-20 grid grid-cols-2 gap-x-18">
-                    <div className="flex flex-col justify-center">
-                        <h2 className="text-5xl font-semibold leading-12">
+                <div className="pt-10 lg:pt-20 flex-col-reverse flex lg:flex-row gap-10 sm:gap-18">
+                    <div className="w-full lg:w-[40%] lg:pt-34 pb-5 shrink-0">
+                        <h2 className="text-3xl md:text-5xl font-semibold md:leading-12 text-center sm:text-left">
                             Welcome, Let&apos;s Talk About Our Ecobazar
                         </h2>
-                        <ul className="pt-8">
+                        <ul className="pt-2 md:pt-8">
                             {data.map((value, i) => (
                                 <li
                                     className={`rounded-md mt-2 ${
@@ -77,7 +77,7 @@ const Faqs = () => {
                                         </p>
                                         <button
                                             type="button"
-                                            className="cursor-pointer size-8 bg-white rounded-full flex justify-center items-center"
+                                            className="cursor-pointer size-8 bg-white rounded-full flex justify-center items-center shrink-0"
                                             onClick={() => handleData(i)}
                                         >
                                             <HiPlus />
@@ -96,8 +96,8 @@ const Faqs = () => {
                             ))}
                         </ul>
                     </div>
-                    <div>
-                        <img src={faqImg} className="object-cover" alt="" />
+                    <div className="w-full sm:w-2/3  mx-auto lg:w-[60%] shrink-0">
+                        <img src={faqImg} className="object-contain" alt="" />
                     </div>
                 </div>
             </div>
