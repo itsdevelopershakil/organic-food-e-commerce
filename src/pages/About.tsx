@@ -19,7 +19,7 @@ const divStyle = {
     backgroundImage: `url(${img2})`,
     // backgroundSize: 'cover',
     // backgroundPosition: 'center',
-    height: '685px',
+    // height: '685px',
     width: '100%',
 };
 
@@ -61,12 +61,12 @@ const About = () => {
             <Breadcrumbs />
             {/* about heading section  */}
             <div className="max-width">
-                <div className="flex gap-10 py-20">
-                    <div className="w-1/2">
-                        <h1 className="text-[##1A1A1A] text-[56px] font-semibold w-[95%] leading-17 mt-18">
+                <div className="flex-col-reverse flex lg:flex-row justify-center items-center gap-10 px-5 lg:px-0 py-20">
+                    <div className="lg:w-1/2">
+                        <h1 className="text-[##1A1A1A] text-4xl  lg:text-[56px] font-semibold w-[95%] lg:leading-17 lg:mt-18">
                             100% Trusted Organic Food Store
                         </h1>
-                        <p className="text-lg text-[#666666] mt-8">
+                        <p className="text-base sm:text-lg lg:text-[#666666] mt-4 lg:mt-8">
                             Morbi porttitor ligula in nunc varius sagittis.
                             Proin dui nisi, laoreet ut tempor ac, cursus vitae
                             eros. Cras quis ultricies elit. Proin ac lectus
@@ -75,29 +75,32 @@ const About = () => {
                             commodo ante, at commodo felis congue vitae.
                         </p>
                     </div>
-                    <div className="w-1/2">
+                    <div className="lg:w-1/2 shrink-0">
                         <img
                             src={img1}
                             alt=""
-                            className="object-contain  h-[492px] rounded-lg"
+                            className="object-contain  lg:h-[492px] rounded-lg"
                         />
                     </div>
                 </div>
             </div>
             {/* About Consumer Trust  */}
-            <div className="bg-no-repeat" style={divStyle}>
+            <div
+                className="bg-cover lg:bg-contain bg-no-repeat"
+                style={divStyle}
+            >
                 <div className="max-width flex justify-end pt-20">
-                    <div className="w-1/2 px-4">
-                        <h3 className=" text-[56px] text-[#002603] font-semibold">
+                    <div className="w-full xl:w-1/2 px-4">
+                        <h3 className="text-4xl  lg:text-[56px] text-[#002603] font-semibold">
                             100% Trusted Organic Food Store
                         </h3>
-                        <p className="pt-5 text-[#808080]">
+                        <p className="pt-5 text-white lg:text-[#808080]">
                             Pellentesque a ante vulputate leo porttitor luctus
                             sed eget eros. Nulla et rhoncus neque. Duis non diam
                             eget est luctus tincidunt a a mi. Nulla eu eros
                             consequat tortor tincidunt feugiat.
                         </p>
-                        <div className="pt-6 grid grid-cols-2 gap-y-6 pb-20">
+                        <div className="pt-6 grid sm:grid-cols-2 gap-y-6 pb-20">
                             {data.map((value, index) => (
                                 <div
                                     key={index}
@@ -111,7 +114,7 @@ const About = () => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="text-[#1A1A1A] font-medium text-lg">
+                                        <p className="text-white lg:text-[#1A1A1A] font-medium text-lg">
                                             {value.title}
                                         </p>
                                         <p className="text-sm text-[#808080]">
@@ -124,22 +127,22 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            {/* Team Section */}
             <div className="border-t border-[#E5E5E5]">
+                {/* Deliver Section  */}
                 <div className="max-width">
-                    <div className="flex items-center gap-7 pt-20">
-                        <div className="w-[40%] shrink-0 pt-20">
-                            <h3 className="text-5xl font-semibold text-[#1A1A1A]">
+                    <div className="flex flex-col-reverse lg:flex-row  items-center lg:gap-7 sm:pt-20">
+                        <div className="w-full lg:w-[40%] shrink-0 pt-5 lg:pt-20">
+                            <h3 className="text-3xl md:text-5xl font-semibold text-[#1A1A1A]">
                                 We Delivered, You Enjoy Your Order.
                             </h3>
-                            <p className="pt-6  text-[#666] leading-6">
+                            <p className="pt-4 sm:pt-6  text-[#666] leading-6">
                                 Ut suscipit egestas suscipit. Sed posuere
                                 pellentesque nunc, ultrices consectetur velit
                                 dapibus eu. Mauris sollicitudin dignissim diam,
                                 ac mattis eros accumsan rhoncus. Curabitur
                                 auctor bibendum nunc eget elementum.
                             </p>
-                            <ul className="pt-5">
+                            <ul className="pt-2 sm:pt-5">
                                 <li className="flex items-center gap-2">
                                     <div className="shrink-0 size-5 rounded-full bg-[#00B2071A] flex justify-center items-center">
                                         <Tickmark />
@@ -167,23 +170,24 @@ const About = () => {
                                 </li>
                             </ul>
                             <Link
-                                className="bg-primary flex items-center justify-center py-4 rounded-[43px] text-white gap-4 w-[192px] mt-8 "
+                                className="bg-primary flex items-center justify-center py-2 md:py-4 rounded-[43px] text-white gap-4 w-[180px] sm:w-[192px] mt-4 sm:mt-8 mb-10 lg:mb-0 text-sm sm:text-base"
                                 to="#"
                             >
                                 Shop Now <FaArrowRight />
                             </Link>
                         </div>
-                        <div className="mt-10 shrink-0 w-[60%]">
+                        <div className="mt-10 shrink-0 w-full lg:w-[60%]">
                             <img src={img3} alt="" className="object-contain" />
                         </div>
                     </div>
                 </div>
+                {/* Team Section */}
                 <div className="bg-linear-to-r from-[#F2F2F2] to-[#FFFFFF] py-20">
                     <div className="max-width">
-                        <h3 className="text-5xl text-center font-semibold text-[#1A1A1A]">
+                        <h3 className="text-3xl md:text-5xl text-center font-semibold text-[#1A1A1A]">
                             Our Awesome Team
                         </h3>
-                        <p className="pt-3 w-1/2 mx-auto text-center text-[#666666] mb-0.5">
+                        <p className="pt-2 sm:pt-3 w-full md:w-1/2 mx-auto text-center text-[#666666] mb-0.5">
                             Pellentesque a ante vulputate leo porttitor luctus
                             sed eget eros. Nulla et rhoncus neque. Duis non diam
                             eget est luctus tincidunt a a mi.
@@ -196,7 +200,7 @@ const About = () => {
             {/* Testimonial section  */}
             <div className="bg-[#F2F2F2]">
                 <div className="max-width py-25">
-                    <h3 className="text-[#1A1A1A] text-5xl font-semibold px-4 mb-0.5">
+                    <h3 className="text-[#1A1A1A] text-3xl md:text-5xl font-semibold px-4 mb-0.5">
                         Client Testimonail
                     </h3>
                     <TestimonialSlider />

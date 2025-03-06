@@ -283,7 +283,7 @@ const Footer: React.FC<FooterProps> = ({ home }) => {
                             <ul className="flex flex-col gap-3 mt-6">
                                 <li>
                                     <Link
-                                        to={''}
+                                        to="/contact"
                                         className="duration-300 hover:text-white"
                                     >
                                         Contact
