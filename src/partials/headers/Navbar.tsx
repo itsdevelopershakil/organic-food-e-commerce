@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                             </NavLink>
                         </li>
                         <li className="border-b border-gray-300 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
-                            <NavLink to="/faq">FAQ</NavLink>
+                            <NavLink to="/faqs">FAQ</NavLink>
                         </li>
                         <li className="border-gray-300 p-2 hover:translate-x-1.5 duration-300 hover:text-primary">
                             <NavLink to="/contact">Contact</NavLink>

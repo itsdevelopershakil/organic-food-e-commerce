@@ -37,6 +37,13 @@ img {
     background: #000;
 } */
 
+.slick-dots li.slick-active div {
+    background-color: #00b207 !important; /* Change active dot color */
+    color: white; /* Text color */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
 /* react slick end  */
 
 @theme {
