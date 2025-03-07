@@ -44,6 +44,7 @@ img {
     --color-primary: #00b207;
     --shadow-box-sm: 0 0 1px 1px rgba(0, 0, 0, 0.15);
     --shadow-box-sm-hover: 0 0 15px 1px rgba(0, 0, 0, 0.15);
+    --shadow-box-lg: 0 0 30px 1px rgba(0, 38, 3, 0.08);
     --shadow-box: 0 0 10px 1px rgba(0, 0, 0, 0.15);
 }
 
