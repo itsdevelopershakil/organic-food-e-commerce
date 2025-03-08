@@ -13,7 +13,7 @@ interface ArrowProps {
 const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow next absolute top-1/2 -translate-y-1/2 bottom-0 right-0 size-[30px] sm:size-[45px]  sm:bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
+            className="custom-arrow next absolute top-1/2 -translate-y-1/2 bottom-0 right-0 size-[30px] sm:size-[45px]  bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
             onClick={onClick}
         >
             <FaArrowRight />
@@ -25,7 +25,7 @@ const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
 const CustomPrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow prev absolute top-1/2 -translate-y-1/2 bottom-0 left-0 size-[30px] sm:size-[45px]  sm:bg-[#fff] flex justify-center items-center rounded-full border  border-[#E6E6E6] cursor-pointer z-[999]"
+            className="custom-arrow prev absolute top-1/2 -translate-y-1/2 bottom-0 left-0 size-[30px] sm:size-[45px]  bg-[#fff] flex justify-center items-center rounded-full border  border-[#E6E6E6] cursor-pointer z-[999]"
             onClick={onClick}
         >
             <FaArrowLeft />
@@ -182,6 +182,10 @@ const HomePage = () => {
                     />
                 </div>
             </div>
+
+            {/* Feature section start  */}
+
+            {/* Feature section end  */}
         </div>
     );
 };
