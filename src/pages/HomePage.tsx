@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import homeImg from '../assets/images/home/BG.png';
+import Feature1 from '../assets/images/home/Feature1';
+import Feature2 from '../assets/images/home/Feature2';
+import Feature3 from '../assets/images/home/Feature3';
+import Feature4 from '../assets/images/home/Feature4';
+import icon from '../assets/images/home/Icon.png';
+import icon2 from '../assets/images/home/Icon2.png';
 import img1 from '../assets/images/home/img1.png';
 import leaf from '../assets/images/home/leaf.png';
+import Divider from '../components/Divider';
 
 interface ArrowProps {
     onClick?: () => void; // onClick is an optional function
@@ -38,6 +46,13 @@ const divStyle = {
 };
 
 const HomePage = () => {
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const featureStyle = (index: number): React.CSSProperties => ({
+        backgroundImage:
+            activeIndex === index ? `url(${icon2})` : `url(${icon})`,
+    });
+
     const settings = {
         dots: true,
         infinite: true,
@@ -184,8 +199,76 @@ const HomePage = () => {
             </div>
 
             {/* Feature section start  */}
+            <div className="max-width">
+                <div className="flex flex-wrap text-center w-full">
+                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                        <div
+                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            style={featureStyle(1)}
+                            onMouseEnter={() => setActiveIndex(1)}
+                            onMouseLeave={() => setActiveIndex(null)}
+                        >
+                            <Feature1 className="fill-primary group-hover:fill-white duration-300" />
+                        </div>
+                        <h3 className="pt-4 text-lg font-semibold">
+                            Free Shipping
+                        </h3>
+                        <p className="pt-2 text-[#999]">
+                            Free shipping with discount
+                        </p>
+                    </div>
+                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                        <div
+                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            style={featureStyle(2)}
+                            onMouseEnter={() => setActiveIndex(2)}
+                            onMouseLeave={() => setActiveIndex(null)}
+                        >
+                            <Feature2 className="fill-primary group-hover:fill-white duration-300" />
+                        </div>
+                        <h3 className="pt-4 text-lg font-semibold">
+                            Great Support 24/7
+                        </h3>
+                        <p className="pt-2 text-[#999]">
+                            Instant access to Contact
+                        </p>
+                    </div>
+                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10  border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                        <div
+                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            style={featureStyle(3)}
+                            onMouseEnter={() => setActiveIndex(3)}
+                            onMouseLeave={() => setActiveIndex(null)}
+                        >
+                            <Feature3 className="fill-primary group-hover:text-white duration-300" />
+                        </div>
+                        <h3 className="pt-4 text-lg font-semibold">
+                            100% Sucure Payment
+                        </h3>
+                        <p className="pt-2 text-[#999]">
+                            We ensure your money is save
+                        </p>
+                    </div>
+                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                        <div
+                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            style={featureStyle(4)}
+                            onMouseEnter={() => setActiveIndex(4)}
+                            onMouseLeave={() => setActiveIndex(null)}
+                        >
+                            <Feature4 className="fill-primary group-hover:fill-white duration-300" />
+                        </div>
+                        <h3 className="pt-4 text-lg font-semibold">
+                            Money-Back Guarantee
+                        </h3>
+                        <p className="pt-2 text-[#999]">30 days money-back</p>
+                    </div>
+                </div>
+                <Divider className="h-px w-full bg-[#CCCCCC]" />
+            </div>
 
             {/* Feature section end  */}
+            <div className="py-20"></div>
         </div>
     );
 };
