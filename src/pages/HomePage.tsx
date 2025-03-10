@@ -268,7 +268,16 @@ const HomePage = () => {
             </div>
 
             {/* Feature section end  */}
-            <div className="py-20"></div>
+            <div>
+                <div className="max-width">
+                    <div>
+                        <h3>Featured Products</h3>
+                        <Link to="/shop">
+                            View All <FaArrowRight />{' '}
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
