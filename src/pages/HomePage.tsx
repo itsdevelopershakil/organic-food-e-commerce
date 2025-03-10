@@ -1,15 +1,24 @@
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { TiStar } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+import FavouriteIcon from '../assets/icons/FavouriteIcon';
+import ShoppingBag from '../assets/icons/ShoppingBag';
 import homeImg from '../assets/images/home/BG.png';
+import capsicum from '../assets/images/home/Capsicum.png';
+import cavvage from '../assets/images/home/chineeseCabbage.png';
+import Eye from '../assets/images/home/Eye';
 import Feature1 from '../assets/images/home/Feature1';
 import Feature2 from '../assets/images/home/Feature2';
 import Feature3 from '../assets/images/home/Feature3';
 import Feature4 from '../assets/images/home/Feature4';
+import FeatureBg from '../assets/images/home/FeatureBG.png';
+import Apple from '../assets/images/home/greenApple.png';
 import icon from '../assets/images/home/Icon.png';
 import icon2 from '../assets/images/home/Icon2.png';
 import img1 from '../assets/images/home/img1.png';
+import ladyFinger from '../assets/images/home/ladiesFiinger.png';
 import leaf from '../assets/images/home/leaf.png';
 import Divider from '../components/Divider';
 
@@ -43,6 +52,9 @@ const CustomPrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
 
 const divStyle = {
     backgroundImage: `url(${homeImg})`,
+};
+const featureBg = {
+    backgroundImage: `url(${FeatureBg})`,
 };
 
 const HomePage = () => {
@@ -268,16 +280,184 @@ const HomePage = () => {
             </div>
 
             {/* Feature section end  */}
-            <div>
+
+            {/* Product Section Start  */}
+            <div style={featureBg} className="bg-no-repeat bg-[left_90%]">
                 <div className="max-width">
-                    <div>
-                        <h3>Featured Products</h3>
-                        <Link to="/shop">
-                            View All <FaArrowRight />{' '}
-                        </Link>
+                    <div className="py-20">
+                        <div className="flex justify-between items-center">
+                            <h3 className="text-[40px] font-semibold text-[#1A1A1A]">
+                                Featured Products
+                            </h3>
+                            <Link
+                                to="/shop"
+                                className="flex items-center gap-3 text-primary"
+                            >
+                                View All <FaArrowRight />
+                            </Link>
+                        </div>
+
+                        <div className="mt-10 flex gap-6">
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
+                                <div className="absolute top-[16px] bg-[#EA4B48] rounded-sm p-1 px-2 text-white">
+                                    Sale 50%
+                                </div>
+                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                                    <div className="group-hover:flex items-center justify-center hidden">
+                                        <FavouriteIcon className="size-5" />
+                                    </div>
+                                    <div className="group-hover:flex items-center justify-center hidden mt-1.5">
+                                        <Eye className="size-5" />
+                                    </div>
+                                </div>
+                                <img
+                                    src={Apple}
+                                    alt=""
+                                    className="object-contain"
+                                />
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="text-sm text-[#4D4D4D]">
+                                            Green Apple
+                                        </p>
+                                        <p className="flex gap-0.5 pt-0.5">
+                                            <span>$14.99</span>
+                                            <span className="text-[#999999]">
+                                                $20.99
+                                            </span>
+                                        </p>
+                                        <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar className="!text-[#CCCCCC]" />
+                                        </div>
+                                    </div>
+                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
+                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
+                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                                    <div className="group-hover:flex items-center justify-center hidden">
+                                        <FavouriteIcon className="size-5" />
+                                    </div>
+                                    <div className="group-hover:flex items-center justify-center hidden mt-1.5">
+                                        <Eye className="size-5" />
+                                    </div>
+                                </div>
+                                <img
+                                    src={cavvage}
+                                    alt=""
+                                    className="object-contain"
+                                />
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="text-sm text-[#4D4D4D]">
+                                            Green Apple
+                                        </p>
+                                        <p className="flex gap-0.5 pt-0.5">
+                                            <span>$14.99</span>
+                                            <span className="text-[#999999]">
+                                                $20.99
+                                            </span>
+                                        </p>
+                                        <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar className="!text-[#CCCCCC]" />
+                                        </div>
+                                    </div>
+                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
+                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
+                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                                    <div className="group-hover:flex items-center justify-center hidden">
+                                        <FavouriteIcon className="size-5" />
+                                    </div>
+                                    <div className="group-hover:flex items-center justify-center hidden mt-1.5">
+                                        <Eye className="size-5" />
+                                    </div>
+                                </div>
+                                <img
+                                    src={capsicum}
+                                    alt=""
+                                    className="object-contain"
+                                />
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="text-sm text-[#4D4D4D]">
+                                            Green Apple
+                                        </p>
+                                        <p className="flex gap-0.5 pt-0.5">
+                                            <span>$14.99</span>
+                                            <span className="text-[#999999]">
+                                                $20.99
+                                            </span>
+                                        </p>
+                                        <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar className="!text-[#CCCCCC]" />
+                                        </div>
+                                    </div>
+                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
+                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
+                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                                    <div className="group-hover:flex items-center justify-center hidden">
+                                        <FavouriteIcon className="size-5" />
+                                    </div>
+                                    <div className="group-hover:flex items-center justify-center hidden mt-1.5">
+                                        <Eye className="size-5" />
+                                    </div>
+                                </div>
+                                <img
+                                    src={ladyFinger}
+                                    alt=""
+                                    className="object-contain"
+                                />
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="text-sm text-[#4D4D4D]">
+                                            Green Apple
+                                        </p>
+                                        <p className="flex gap-0.5 pt-0.5">
+                                            <span>$14.99</span>
+                                            <span className="text-[#999999]">
+                                                $20.99
+                                            </span>
+                                        </p>
+                                        <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar />
+                                            <TiStar className="!text-[#CCCCCC]" />
+                                        </div>
+                                    </div>
+                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
+                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            {/* Product Section Start  */}
         </div>
     );
 };

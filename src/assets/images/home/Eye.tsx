@@ -1,7 +1,12 @@
-const Eye = () => {
+import React from 'react';
+type eyeProps = {
+    className?: string;
+};
+const Eye: React.FC<eyeProps> = ({ className }) => {
     return (
         <svg
-            width="20"
+            className={className}
+            // width="20"
             height="16"
             viewBox="0 0 20 16"
             fill="none"
