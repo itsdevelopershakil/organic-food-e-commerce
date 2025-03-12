@@ -7,6 +7,7 @@ import FavouriteIcon from '../assets/icons/FavouriteIcon';
 import ShoppingBag from '../assets/icons/ShoppingBag';
 import homeImg from '../assets/images/home/BG.png';
 import capsicum from '../assets/images/home/Capsicum.png';
+import Categorybg from '../assets/images/home/categoryBG.png';
 import cavvage from '../assets/images/home/chineeseCabbage.png';
 import Eye from '../assets/images/home/Eye';
 import Feature1 from '../assets/images/home/Feature1';
@@ -20,6 +21,7 @@ import icon2 from '../assets/images/home/Icon2.png';
 import img1 from '../assets/images/home/img1.png';
 import ladyFinger from '../assets/images/home/ladiesFiinger.png';
 import leaf from '../assets/images/home/leaf.png';
+import CategorySlider from '../components/CategorySlider';
 import Divider from '../components/Divider';
 
 interface ArrowProps {
@@ -55,6 +57,10 @@ const divStyle = {
 };
 const featureBg = {
     backgroundImage: `url(${FeatureBg})`,
+};
+
+const categoryBG = {
+    backgroundImage: `url(${Categorybg})`,
 };
 
 const HomePage = () => {
@@ -448,7 +454,30 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            {/* Product Section Start  */}
+            {/* Product Section end  */}
+
+            {/* Category Section start  */}
+            <div style={categoryBG} className="bg-no-repeat">
+                <div className="max-width">
+                    <div className="py-20">
+                        <div className="flex justify-between items-center">
+                            <h3 className="text-xl sm:text-3xl md:text-[40px] font-semibold text-[#1A1A1A]">
+                                Shop by Top Categories
+                            </h3>
+                            <Link
+                                to="/shop"
+                                className="flex items-center gap-3 text-primary text-sm sm:text-base"
+                            >
+                                View All <FaArrowRight />
+                            </Link>
+                        </div>
+                        <div>
+                            <CategorySlider />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Category Section end  */}
         </div>
     );
 };
