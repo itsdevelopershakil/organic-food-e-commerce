@@ -286,23 +286,23 @@ const HomePage = () => {
                 <div className="max-width">
                     <div className="py-20">
                         <div className="flex justify-between items-center">
-                            <h3 className="text-[40px] font-semibold text-[#1A1A1A]">
+                            <h3 className="text-xl sm:text-3xl md:text-[40px] font-semibold text-[#1A1A1A]">
                                 Featured Products
                             </h3>
                             <Link
                                 to="/shop"
-                                className="flex items-center gap-3 text-primary"
+                                className="flex items-center gap-3 text-primary text-sm sm:text-base"
                             >
                                 View All <FaArrowRight />
                             </Link>
                         </div>
 
-                        <div className="mt-10 flex gap-6">
-                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
-                                <div className="absolute top-[16px] bg-[#EA4B48] rounded-sm p-1 px-2 text-white">
+                        <div className="md:mx-5 lg:mx-0 mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 lg:gap-6">
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] pt-8 p-2 sm:p-4 rounded-lg cursor-pointer duration-300 relative group bg-white">
+                                <div className="absolute top-[16px] bg-[#EA4B48] rounded-sm p-1 px-2 text-white text-sm sm:text-base">
                                     Sale 50%
                                 </div>
-                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                                <div className="absolute right-[10px] sm:right-[20px] top-[20px] *:size-8 *:sm:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
                                     <div className="group-hover:flex items-center justify-center hidden">
                                         <FavouriteIcon className="size-5" />
                                     </div>
@@ -317,10 +317,10 @@ const HomePage = () => {
                                 />
                                 <div className="flex justify-between items-center">
                                     <div>
-                                        <p className="text-sm text-[#4D4D4D]">
+                                        <p className="text-xs sm:text-sm text-[#4D4D4D]">
                                             Green Apple
                                         </p>
-                                        <p className="flex gap-0.5 pt-0.5">
+                                        <p className="flex gap-0.5 pt-0.5 text-sm sm:text-base">
                                             <span>$14.99</span>
                                             <span className="text-[#999999]">
                                                 $20.99
@@ -334,13 +334,13 @@ const HomePage = () => {
                                             <TiStar className="!text-[#CCCCCC]" />
                                         </div>
                                     </div>
-                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
-                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    <div className="size-8 sm:size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center shrink-0">
+                                        <ShoppingBag className="size-4 sm:size-6 group-hover:stroke-[#fff]" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
-                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group bg-white">
+                                <div className="absolute right-[10px] sm:right-[20px] top-[20px] *:size-8 *:sm:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
                                     <div className="group-hover:flex items-center justify-center hidden">
                                         <FavouriteIcon className="size-5" />
                                     </div>
@@ -355,14 +355,11 @@ const HomePage = () => {
                                 />
                                 <div className="flex justify-between items-center">
                                     <div>
-                                        <p className="text-sm text-[#4D4D4D]">
+                                        <p className="text-xs sm:text-sm text-[#4D4D4D]">
                                             Green Apple
                                         </p>
-                                        <p className="flex gap-0.5 pt-0.5">
+                                        <p className="flex gap-0.5 pt-0.5 text-sm sm:text-base">
                                             <span>$14.99</span>
-                                            <span className="text-[#999999]">
-                                                $20.99
-                                            </span>
                                         </p>
                                         <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
                                             <TiStar />
@@ -372,13 +369,13 @@ const HomePage = () => {
                                             <TiStar className="!text-[#CCCCCC]" />
                                         </div>
                                     </div>
-                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
-                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    <div className="size-8 sm:size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center shrink-0">
+                                        <ShoppingBag className="size-4 sm:size-6 group-hover:stroke-[#fff]" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
-                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group bg-white">
+                                <div className="absolute right-[10px] sm:right-[20px] top-[20px] *:size-8 *:sm:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
                                     <div className="group-hover:flex items-center justify-center hidden">
                                         <FavouriteIcon className="size-5" />
                                     </div>
@@ -393,14 +390,11 @@ const HomePage = () => {
                                 />
                                 <div className="flex justify-between items-center">
                                     <div>
-                                        <p className="text-sm text-[#4D4D4D]">
+                                        <p className="text-xs sm:text-sm text-[#4D4D4D]">
                                             Green Apple
                                         </p>
-                                        <p className="flex gap-0.5 pt-0.5">
+                                        <p className="flex gap-0.5 pt-0.5 text-sm sm:text-base">
                                             <span>$14.99</span>
-                                            <span className="text-[#999999]">
-                                                $20.99
-                                            </span>
                                         </p>
                                         <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
                                             <TiStar />
@@ -410,13 +404,13 @@ const HomePage = () => {
                                             <TiStar className="!text-[#CCCCCC]" />
                                         </div>
                                     </div>
-                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
-                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    <div className="size-8 sm:size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center shrink-0">
+                                        <ShoppingBag className="size-4 sm:size-6 group-hover:stroke-[#fff]" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] w-1/4 pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group">
-                                <div className="absolute right-[20px] top-[20px] *:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
+                            <div className="border border-[#E6E6E6] hover:border-[#2C742F] hover:shadow-box-md shadow-[#20B526] pt-8 p-4 rounded-lg cursor-pointer duration-300 relative group bg-white">
+                                <div className="absolute right-[10px] sm:right-[20px] top-[20px] *:size-8 *:sm:size-10 *:border *:rounded-full *:border-[#F2F2F2] *:bg-white">
                                     <div className="group-hover:flex items-center justify-center hidden">
                                         <FavouriteIcon className="size-5" />
                                     </div>
@@ -431,14 +425,11 @@ const HomePage = () => {
                                 />
                                 <div className="flex justify-between items-center">
                                     <div>
-                                        <p className="text-sm text-[#4D4D4D]">
+                                        <p className="text-xs sm:text-sm text-[#4D4D4D]">
                                             Green Apple
                                         </p>
-                                        <p className="flex gap-0.5 pt-0.5">
+                                        <p className="flex gap-0.5 pt-0.5 text-sm sm:text-base">
                                             <span>$14.99</span>
-                                            <span className="text-[#999999]">
-                                                $20.99
-                                            </span>
                                         </p>
                                         <div className="flex gap-1 pt-0.5 *:text-[#FF8A00] *:size-3">
                                             <TiStar />
@@ -448,8 +439,8 @@ const HomePage = () => {
                                             <TiStar className="!text-[#CCCCCC]" />
                                         </div>
                                     </div>
-                                    <div className="size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center">
-                                        <ShoppingBag className="size-6 group-hover:stroke-[#fff]" />
+                                    <div className="size-8 sm:size-10 bg-[#F2F2F2] group-hover:bg-primary rounded-full flex justify-center items-center shrink-0">
+                                        <ShoppingBag className="size-4 sm:size-6 group-hover:stroke-[#fff]" />
                                     </div>
                                 </div>
                             </div>
