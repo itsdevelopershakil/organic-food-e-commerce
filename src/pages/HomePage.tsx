@@ -457,7 +457,7 @@ const HomePage = () => {
             {/* Product Section end  */}
 
             {/* Category Section start  */}
-            <div style={categoryBG} className="bg-no-repeat">
+            <div style={categoryBG} className="bg-no-repeat bg-cover">
                 <div className="max-width">
                     <div className="py-20">
                         <div className="flex justify-between items-center">

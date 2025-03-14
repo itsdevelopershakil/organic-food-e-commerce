@@ -15,7 +15,7 @@ interface ArrowProps {
 const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow next absolute top-1/2 -translate-y-1/2 bottom-0 right-[-50px] size-[45px] bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
+            className="custom-arrow next absolute top-1/2 -translate-y-1/2 bottom-0 right-[-15px] sm:right-0 2xl:right-[-80px] size-8 md:size-[45px] bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
             onClick={onClick}
         >
             <FaArrowRight />
@@ -27,7 +27,7 @@ const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
 const CustomPrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow prev absolute top-1/2 -translate-y-1/2 bottom-0 left-[-50px] size-[45px] bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
+            className="custom-arrow prev absolute top-1/2 -translate-y-1/2 bottom-0 left-[-15px] sm:left-0 2xl:left-[-80px] size-8 md:size-[45px] bg-[#fff] flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer z-[999]"
             onClick={onClick}
         >
             <FaArrowLeft />
@@ -49,23 +49,22 @@ const CategorySlider: React.FC = () => {
             {
                 breakpoint: 1024,
                 settings: {
+                    slidesToShow: 4,
+                    infinite: true,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
                     slidesToShow: 3,
                     infinite: true,
                 },
             },
             // {
-            //     breakpoint: 600,
+            //     breakpoint: 360,
             //     settings: {
-            //         slidesToShow: 2,
-            //         slidesToScroll: 2,
-            //         initialSlide: 2,
-            //     },
-            // },
-            // {
-            //     breakpoint: 480,
-            //     settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1,
+            //         slidesToShow: 3,
+            //         infinite: true,
             //     },
             // },
         ],
@@ -73,103 +72,103 @@ const CategorySlider: React.FC = () => {
     return (
         <div className="space-x-4 mt-12">
             <Slider {...settings}>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border border-[#2C742F] shadow-[#20B526]">
+                <div className="px-1 sm:px-2 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category1}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-centter">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Vegetables
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 165 Products
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6">
+                <div className="px-1 sm:px-2 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category2}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-center">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Fresh Fruit
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 137 Products
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6">
+                <div className="px-1 sm:px-2 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category3}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-center">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Fish
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 34 Products
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6">
+                <div className="px-1 sm:px-2 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category4}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-center">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Meat
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 165 Products
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6">
+                <div className="px-1 sm:px-2 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category5}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-center">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Water and Drinks
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 48 Products
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6">
+                <div className="px-1 md:px-3">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
                         <img
                             src={category6}
-                            className="object-contain"
+                            className="object-contain size-14 md:size-20"
                             alt=""
                         />
                         <div className="text-center">
-                            <h4 className="text-[#1a1a1a] font-medium text-lg hover:text-[#2C742F] duration-300">
+                            <h4 className="text-[#1a1a1a] font-medium text-sm md:text-lg group-hover:text-[#2C742F]">
                                 Snacks
                             </h4>
-                            <p className="text-[#808080] text-sm">
+                            <p className="text-[#808080] text-xs md:text-sm">
                                 165 Products
                             </p>
                         </div>
