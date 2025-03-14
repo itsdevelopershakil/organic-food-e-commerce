@@ -8,7 +8,11 @@ import ShoppingBag from '../assets/icons/ShoppingBag';
 import homeImg from '../assets/images/home/BG.png';
 import capsicum from '../assets/images/home/Capsicum.png';
 import Categorybg from '../assets/images/home/categoryBG.png';
+import categoryBgObj from '../assets/images/home/categoryBgObj.png';
+import categoryBgObj2 from '../assets/images/home/categoryBgObj2.png';
 import cavvage from '../assets/images/home/chineeseCabbage.png';
+import chooseUsImg from '../assets/images/home/chooseUs1.png';
+import chooseUsImg2 from '../assets/images/home/chooseUs2.png';
 import Eye from '../assets/images/home/Eye';
 import Feature1 from '../assets/images/home/Feature1';
 import Feature2 from '../assets/images/home/Feature2';
@@ -21,8 +25,16 @@ import icon2 from '../assets/images/home/Icon2.png';
 import img1 from '../assets/images/home/img1.png';
 import ladyFinger from '../assets/images/home/ladiesFiinger.png';
 import leaf from '../assets/images/home/leaf.png';
+import TickMark from '../assets/images/TickMark';
 import CategorySlider from '../components/CategorySlider';
 import Divider from '../components/Divider';
+
+import chooseUsBg from '../assets/images/home/chooseUsBg.png';
+import chooseUsBg2 from '../assets/images/home/chooseUsBg2.png';
+import chooseUsBg3 from '../assets/images/home/chooseUsBg3.png';
+import chooseUsBg4 from '../assets/images/home/chooseUsBg4.png';
+import chooseUsBg5 from '../assets/images/home/chooseUsBg5.png';
+import leaf2 from '../assets/images/home/leaf2.png';
 
 interface ArrowProps {
     onClick?: () => void; // onClick is an optional function
@@ -284,7 +296,6 @@ const HomePage = () => {
                 </div>
                 <Divider className="h-px w-full bg-[#CCCCCC]" />
             </div>
-
             {/* Feature section end  */}
 
             {/* Product Section Start  */}
@@ -457,16 +468,30 @@ const HomePage = () => {
             {/* Product Section end  */}
 
             {/* Category Section start  */}
-            <div style={categoryBG} className="bg-no-repeat bg-cover">
+            <div style={categoryBG} className="bg-no-repeat bg-cover relative">
+                <div className="absolute bottom-[10%] right-0">
+                    <img
+                        src={categoryBgObj}
+                        alt=""
+                        className="object-contain"
+                    />
+                </div>
+                <div className="absolute bottom-[10px] right-[14%]">
+                    <img
+                        src={categoryBgObj2}
+                        alt=""
+                        className="object-contain"
+                    />
+                </div>
                 <div className="max-width">
-                    <div className="py-20">
+                    <div className="py-10 md:py-20">
                         <div className="flex justify-between items-center">
-                            <h3 className="text-xl sm:text-3xl md:text-[40px] font-semibold text-[#1A1A1A]">
+                            <h3 className="text-lg sm:text-3xl md:text-[40px] font-semibold text-[#1A1A1A]">
                                 Shop by Top Categories
                             </h3>
                             <Link
                                 to="/shop"
-                                className="flex items-center gap-3 text-primary text-sm sm:text-base"
+                                className="flex items-center gap-3 text-primary text-xs sm:text-base"
                             >
                                 View All <FaArrowRight />
                             </Link>
@@ -478,6 +503,103 @@ const HomePage = () => {
                 </div>
             </div>
             {/* Category Section end  */}
+
+            {/* Choose Us Section start  */}
+            <div className="py-10 sm:py-20 relative">
+                <div className="absolute top-0 left-0">
+                    <img src={chooseUsBg} alt="" />
+                </div>
+                <div className="absolute left-[50px] bottom-[10%]">
+                    <img src={chooseUsBg2} alt="" />
+                </div>
+                <div className="absolute right-[30px] top-[20%]">
+                    <img src={chooseUsBg5} alt="" />
+                </div>
+                <div className="absolute right-[10%] bottom-[-10px]">
+                    <img src={leaf2} alt="" />
+                </div>
+
+                <div className="max-width">
+                    <div className="flex flex-col lg:flex-row lg:gap-10 lg:items-center">
+                        <div className="w-full lg:w-[60%]">
+                            <div className="flex gap-6 relative">
+                                <div className="z-[99] relative">
+                                    <img
+                                        src={chooseUsImg}
+                                        alt=""
+                                        className="object-contain"
+                                    />
+                                    <div className="absolute left-[-15px] xl:left-[-50px] bottom-[5px] sm:bottom-[20px] lg:bottom-0 xl:bottom-[30px]">
+                                        <img
+                                            src={chooseUsBg3}
+                                            alt=""
+                                            className="object-contain w-16 sm:w-20"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="z-[99]">
+                                    <img
+                                        src={chooseUsImg2}
+                                        alt=""
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <div className="absolute top-[-60px] left-[20%]">
+                                    <img src={chooseUsBg4} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full lg:w-[40%] shrink-0 z-[99]">
+                            <h3 className="text-2xl sm:text-4xl md:text-[40px] font-semibold leading-[1.2] pt-4 xl:w-[85%] ]">
+                                100% Trusted Organic Food Store
+                            </h3>
+                            <div className="flex gap-3 pt-6">
+                                <div className="size-6 bg-primary rounded-full flex justify-center items-center shrink-0">
+                                    <TickMark className="size-4" />
+                                </div>
+                                <div>
+                                    <h5 className="text-lg font-semibold text-[#1a1a1a]">
+                                        Healthy & natural food for lovers of
+                                        healthy food.
+                                    </h5>
+                                    <p className="text-[#808080] pt-2.5">
+                                        Ut quis tempus erat. Phasellus euismod
+                                        bibendum magna non tristique.
+                                        Pellentesque semper vestibulum elit sed
+                                        condimentum. Nunc pretium fermentum
+                                        interdum.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3 pt-6">
+                                <div className="size-6 bg-primary rounded-full flex justify-center items-center shrink-0">
+                                    <TickMark className="size-4" />
+                                </div>
+                                <div>
+                                    <h5 className="text-lg font-semibold text-[#1a1a1a]">
+                                        Every day fresh and quality products for
+                                        you.
+                                    </h5>
+                                    <p className="text-[#808080] pt-2.5">
+                                        Maecenas vehicula a justo quis laoreet.
+                                        Sed in placerat nibh, a posuere ex.
+                                        Morbi sem neque, aliquam sed orci et,
+                                        rhoncus lobortis felis. Sed vestibulum
+                                        nisl sit amet sapien.
+                                    </p>
+                                </div>
+                            </div>
+                            <Link
+                                to="/shop"
+                                className="w-[130px] sm:w-[192px] mt-6 md:mt-2 sm:mt-4 lg:mt-6 flex gap-4 items-center  bg-primary text-white py-2 lg:py-3 px-5 sm:px-10 text-xs sm:text-base rounded-[53px]"
+                            >
+                                <p>Shop now</p> <FaArrowRight />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Choose us Section end  */}
         </div>
     );
 };

@@ -70,10 +70,10 @@ const CategorySlider: React.FC = () => {
         ],
     };
     return (
-        <div className="space-x-4 mt-12">
+        <div className="space-x-4 mt-6 md:mt-12">
             <Slider {...settings}>
                 <div className="px-1 sm:px-2 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category1}
                             className="object-contain size-14 md:size-20"
@@ -90,7 +90,7 @@ const CategorySlider: React.FC = () => {
                     </div>
                 </div>
                 <div className="px-1 sm:px-2 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category2}
                             className="object-contain size-14 md:size-20"
@@ -107,7 +107,7 @@ const CategorySlider: React.FC = () => {
                     </div>
                 </div>
                 <div className="px-1 sm:px-2 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category3}
                             className="object-contain size-14 md:size-20"
@@ -124,7 +124,7 @@ const CategorySlider: React.FC = () => {
                     </div>
                 </div>
                 <div className="px-1 sm:px-2 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category4}
                             className="object-contain size-14 md:size-20"
@@ -141,7 +141,7 @@ const CategorySlider: React.FC = () => {
                     </div>
                 </div>
                 <div className="px-1 sm:px-2 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category5}
                             className="object-contain size-14 md:size-20"
@@ -158,7 +158,7 @@ const CategorySlider: React.FC = () => {
                     </div>
                 </div>
                 <div className="px-1 md:px-3">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px]">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-md flex flex-col justify-center items-center py-6 hover:border hover:border-[#2C742F] hover:shadow-[#20B526] group md:h-[210px] h-[130px] bg-white">
                         <img
                             src={category6}
                             className="object-contain size-14 md:size-20"
