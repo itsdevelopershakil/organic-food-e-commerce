@@ -35,6 +35,9 @@ import chooseUsBg3 from '../assets/images/home/chooseUsBg3.png';
 import chooseUsBg4 from '../assets/images/home/chooseUsBg4.png';
 import chooseUsBg5 from '../assets/images/home/chooseUsBg5.png';
 import experienceBGimg from '../assets/images/home/experienceBg.png';
+import experienceImg2 from '../assets/images/home/experienceImg.png';
+import experienceImg3 from '../assets/images/home/experienceImg2.png';
+import experienceImg4 from '../assets/images/home/experienceImg3.png';
 import leaf2 from '../assets/images/home/leaf2.png';
 import CounterUpOnView from '../lib/CounterUpOnView';
 
@@ -608,36 +611,56 @@ const HomePage = () => {
             {/* Choose us Section end  */}
 
             {/* Experience Section Start  */}
-            <div style={experienceBG} className="bg-no-repeat bg-cover">
-                <div className="max-width py-20">
-                    <div className="grid grid-cols-4 gap-x-6">
-                        <div className="text-center bg-white/7 py-10 rounded-lg">
-                            <div className="text-primary text-[56px] flex gap-1 font-light justify-center">
+            <div
+                style={experienceBG}
+                className="bg-no-repeat bg-cover relative"
+            >
+                <div className="absolute top-[10%] left-[-20px]">
+                    <img src={experienceImg2} alt="" />
+                </div>
+                <div className="absolute right-[10%] bottom-[-16px] opacity-30">
+                    <img src={experienceImg3} alt="" />
+                </div>
+                <div className="absolute right-0 top-[10%]">
+                    <img src={experienceImg4} alt="" />
+                </div>
+                <div className="max-width py-10 sm:py-20">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                        <div className="text-center bg-white/7 py-5 sm:py-10 rounded-lg z-[999]">
+                            <div className="text-primary text-4xl sm:text-5xl lg:text-[56px] flex gap-1 font-light justify-center">
                                 <CounterUpOnView end={37} />
                                 <p>+</p>
                             </div>
-                            <p className="text-white">Years of Hard Work</p>
+                            <p className="text-white text-sm sm:text-base lg:text-lg pt-1">
+                                Years of Hard Work
+                            </p>
                         </div>
-                        <div className="text-center bg-white/7 py-10 rounded-lg">
-                            <div className="text-primary text-[56px] flex gap-1 font-light justify-center">
+                        <div className="text-center bg-white/7 py-5 sm:py-10 rounded-lg z-[999]">
+                            <div className="text-primary text-4xl sm:text-5xl lg:text-[56px] flex gap-1 font-light justify-center">
                                 <CounterUpOnView end={500} />
                                 k+
                             </div>
-                            <p className="text-white">Happy Customer</p>
+                            <p className="text-white text-sm sm:text-base lg:text-lg pt-1">
+                                Happy Customer
+                            </p>
                         </div>
-                        <div className="text-center bg-white/7 py-10 rounded-lg">
+                        <div className="text-center bg-white/7 py-5 sm:py-10 rounded-lg z-[999]">
                             <CounterUpOnView
                                 end={28}
-                                className="text-primary text-[56px] font-light"
+                                className="text-primary text-4xl sm:text-5xl lg:text-[56px] font-light"
                             />
-                            <p className="text-white">Qualified Team Member</p>
+                            <p className="text-white text-sm sm:text-base lg:text-lg pt-1">
+                                Qualified Team Member
+                            </p>
                         </div>
-                        <div className="text-center bg-white/7 py-10 rounded-lg">
-                            <div className="text-primary flex gap-1 text-[56px] font-light justify-center">
+                        <div className="text-center bg-white/7 py-5 sm:py-10 rounded-lg z-[999]">
+                            <div className="text-primary flex gap-1 text-4xl sm:text-5xl lg:text-[56px] font-light justify-center">
                                 <CounterUpOnView end={750} />
                                 k+
                             </div>
-                            <p className="text-white">Monthly Orders</p>
+                            <p className="text-white text-sm sm:text-base lg:text-lg pt-1">
+                                Monthly Orders
+                            </p>
                         </div>
                     </div>
                 </div>
