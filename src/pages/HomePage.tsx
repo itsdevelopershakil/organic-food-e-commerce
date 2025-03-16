@@ -34,7 +34,9 @@ import chooseUsBg2 from '../assets/images/home/chooseUsBg2.png';
 import chooseUsBg3 from '../assets/images/home/chooseUsBg3.png';
 import chooseUsBg4 from '../assets/images/home/chooseUsBg4.png';
 import chooseUsBg5 from '../assets/images/home/chooseUsBg5.png';
+import experienceBGimg from '../assets/images/home/experienceBg.png';
 import leaf2 from '../assets/images/home/leaf2.png';
+import CounterUpOnView from '../lib/CounterUpOnView';
 
 interface ArrowProps {
     onClick?: () => void; // onClick is an optional function
@@ -73,6 +75,10 @@ const featureBg = {
 
 const categoryBG = {
     backgroundImage: `url(${Categorybg})`,
+};
+
+const experienceBG = {
+    backgroundImage: `url(${experienceBGimg})`,
 };
 
 const HomePage = () => {
@@ -505,7 +511,7 @@ const HomePage = () => {
             {/* Category Section end  */}
 
             {/* Choose Us Section start  */}
-            <div className="py-10 sm:py-20 relative">
+            <div className="py-10 sm:py-20 relative overflow-hidden">
                 <div className="absolute top-0 left-0">
                     <img src={chooseUsBg} alt="" />
                 </div>
@@ -515,14 +521,14 @@ const HomePage = () => {
                 <div className="absolute right-[30px] top-[20%]">
                     <img src={chooseUsBg5} alt="" />
                 </div>
-                <div className="absolute right-[10%] bottom-[-10px]">
+                <div className="absolute right-[10%] bottom-[-50px]">
                     <img src={leaf2} alt="" />
                 </div>
 
                 <div className="max-width">
                     <div className="flex flex-col lg:flex-row lg:gap-10 lg:items-center">
                         <div className="w-full lg:w-[60%]">
-                            <div className="flex gap-6 relative">
+                            <div className="flex gap-3 md:gap-6 relative">
                                 <div className="z-[99] relative">
                                     <img
                                         src={chooseUsImg}
@@ -600,6 +606,43 @@ const HomePage = () => {
                 </div>
             </div>
             {/* Choose us Section end  */}
+
+            {/* Experience Section Start  */}
+            <div style={experienceBG} className="bg-no-repeat bg-cover">
+                <div className="max-width py-20">
+                    <div className="grid grid-cols-4 gap-x-6">
+                        <div className="text-center bg-white/7 py-10 rounded-lg">
+                            <div className="text-primary text-[56px] flex gap-1 font-light justify-center">
+                                <CounterUpOnView end={37} />
+                                <p>+</p>
+                            </div>
+                            <p className="text-white">Years of Hard Work</p>
+                        </div>
+                        <div className="text-center bg-white/7 py-10 rounded-lg">
+                            <div className="text-primary text-[56px] flex gap-1 font-light justify-center">
+                                <CounterUpOnView end={500} />
+                                k+
+                            </div>
+                            <p className="text-white">Happy Customer</p>
+                        </div>
+                        <div className="text-center bg-white/7 py-10 rounded-lg">
+                            <CounterUpOnView
+                                end={28}
+                                className="text-primary text-[56px] font-light"
+                            />
+                            <p className="text-white">Qualified Team Member</p>
+                        </div>
+                        <div className="text-center bg-white/7 py-10 rounded-lg">
+                            <div className="text-primary flex gap-1 text-[56px] font-light justify-center">
+                                <CounterUpOnView end={750} />
+                                k+
+                            </div>
+                            <p className="text-white">Monthly Orders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Experience Section End  */}
         </div>
     );
 };
