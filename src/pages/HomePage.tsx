@@ -39,7 +39,15 @@ import experienceImg2 from '../assets/images/home/experienceImg.png';
 import experienceImg3 from '../assets/images/home/experienceImg2.png';
 import experienceImg4 from '../assets/images/home/experienceImg3.png';
 import leaf2 from '../assets/images/home/leaf2.png';
+import OfferButton from '../components/OfferButton';
 import CounterUpOnView from '../lib/CounterUpOnView';
+
+import offerBG from '../assets/images/home/offerBG.png';
+import offerBG2 from '../assets/images/home/offerBG2.png';
+import offerBG3 from '../assets/images/home/offerBG3.png';
+import offerBG4 from '../assets/images/home/offerBG4.png';
+import offerBG5 from '../assets/images/home/offerBG5.png';
+import Timer from '../lib/Timer';
 
 interface ArrowProps {
     onClick?: () => void; // onClick is an optional function
@@ -82,6 +90,12 @@ const categoryBG = {
 
 const experienceBG = {
     backgroundImage: `url(${experienceBGimg})`,
+};
+const OfferBGstyle = {
+    backgroundImage: `url(${offerBG})`,
+};
+const OfferBGstyle2 = {
+    backgroundImage: `url(${offerBG2})`,
 };
 
 const HomePage = () => {
@@ -666,6 +680,53 @@ const HomePage = () => {
                 </div>
             </div>
             {/* Experience Section End  */}
+
+            {/* Offer Section Start  */}
+            <div className="relative overflow-hidden">
+                <div className="absolute top-[10%] left-[50px]">
+                    <img src={offerBG3} alt="" />
+                </div>
+                <div className="absolute right-0 top-[-30%]">
+                    <img src={offerBG4} alt="" />
+                </div>
+                <div className="absolute right-0 lg:right-[50px] bottom-0">
+                    <img src={offerBG5} alt="" />
+                </div>
+                <div className="max-width">
+                    <div className="flex flex-col sm:flex-row md:px-4 lg:px-0 gap-3 lg:gap-6 py-10 lg:py-20">
+                        <div
+                            className="py-10 lg:py-20 sm:w-1/2 bg-cover bg-no-repeat text-white px-10 flex flex-col justify-center rounded-lg z-[999]"
+                            style={OfferBGstyle}
+                        >
+                            <p className="text-sm">100% ORGANIC</p>
+                            <h4 className="text-2xl md:text-3xl lg:text-4xl font-semibold pt-2">
+                                Fruit & Vegetable
+                            </h4>
+                            <div className="pt-3 lg:pt-6 flex gap-2 items-center">
+                                Starting at:
+                                <p className="p-1 bg-[#FF8A00] rounded-sm text-sm sm:text-base">
+                                    $11.99
+                                </p>
+                            </div>
+                            <OfferButton className="mt-4 lg:mt-6 text-sm bg-primary" />
+                        </div>
+                        <div
+                            className="py-10 lg:py-20 sm:w-1/2 bg-cover bg-no-repeat text-white px-10 flex flex-col justify-center rounded-lg z-[999]"
+                            style={OfferBGstyle2}
+                        >
+                            <p className="text-sm">sale off the week</p>
+                            <h4 className="text-2xl md:text-3xl lg:text-4xl font-semibold sm:pt-2">
+                                Sales of the Year
+                            </h4>
+
+                            <Timer targetDate="2025-05-31T23:59:59" />
+
+                            <OfferButton className="mt-4 lg:mt-6 bg-primary text-sm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Offer Section end  */}
         </div>
     );
 };
