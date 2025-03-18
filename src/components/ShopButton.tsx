@@ -1,11 +1,11 @@
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-type OfferButtonProps = {
+type ShopButtonProps = {
     className?: string;
 };
 
-const OfferButton: React.FC<OfferButtonProps> = ({ className }) => {
+const ShopButton: React.FC<ShopButtonProps> = ({ className }) => {
     return (
         <Link
             to="/shop"
@@ -16,4 +16,4 @@ const OfferButton: React.FC<OfferButtonProps> = ({ className }) => {
     );
 };
 
-export default OfferButton;
+export default ShopButton;

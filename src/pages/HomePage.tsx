@@ -39,7 +39,7 @@ import experienceImg2 from '../assets/images/home/experienceImg.png';
 import experienceImg3 from '../assets/images/home/experienceImg2.png';
 import experienceImg4 from '../assets/images/home/experienceImg3.png';
 import leaf2 from '../assets/images/home/leaf2.png';
-import OfferButton from '../components/OfferButton';
+import OfferButton from '../components/ShopButton';
 import CounterUpOnView from '../lib/CounterUpOnView';
 
 import offerBG from '../assets/images/home/offerBG.png';
@@ -47,6 +47,7 @@ import offerBG2 from '../assets/images/home/offerBG2.png';
 import offerBG3 from '../assets/images/home/offerBG3.png';
 import offerBG4 from '../assets/images/home/offerBG4.png';
 import offerBG5 from '../assets/images/home/offerBG5.png';
+import BestSale from '../components/BestSale';
 import Timer from '../lib/Timer';
 
 interface ArrowProps {
@@ -727,6 +728,10 @@ const HomePage = () => {
                 </div>
             </div>
             {/* Offer Section end  */}
+
+            {/* best seller section start  */}
+            <BestSale />
+            {/* best seller section end */}
         </div>
     );
 };
