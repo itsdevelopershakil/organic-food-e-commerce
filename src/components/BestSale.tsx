@@ -227,7 +227,7 @@ const BestSale = () => {
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 pt-10 gap-6 relative">
-                        <div className="absolute right-[-40px] bottom-[-15px]">
+                        <div className="hidden lg:block absolute lg:right-0 2xl:right-[-40px] bottom-[-15px]">
                             <img
                                 src={bestSaleBg6}
                                 alt=""
