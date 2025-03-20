@@ -48,6 +48,7 @@ import offerBG3 from '../assets/images/home/offerBG3.png';
 import offerBG4 from '../assets/images/home/offerBG4.png';
 import offerBG5 from '../assets/images/home/offerBG5.png';
 import BestSale from '../components/BestSale';
+import NewsSection from '../components/NewsSection';
 import Timer from '../lib/Timer';
 
 interface ArrowProps {
@@ -732,6 +733,10 @@ const HomePage = () => {
             {/* best seller section start  */}
             <BestSale />
             {/* best seller section end */}
+
+            {/* News Section start  */}
+            <NewsSection />
+            {/* News Section end */}
         </div>
     );
 };
