@@ -6,11 +6,16 @@ import blog from '../assets/images/home/Blog.png';
 import news1 from '../assets/images/home/news1.png';
 import news2 from '../assets/images/home/news2.png';
 import news3 from '../assets/images/home/news3.png';
+import newsBg from '../assets/images/home/newsbg.png';
 import UserIcon from '../assets/images/UserIcon';
+
+const newsBG = {
+    backgroundImage: `url(${newsBg})`,
+};
 
 const NewsSection = () => {
     return (
-        <div>
+        <div style={newsBG} className="bg-no-repeat bg-cover">
             <div className="max-width">
                 <div className="py-10 md:py-20">
                     <img src={blog} alt="" className="mx-auto" />
@@ -18,8 +23,8 @@ const NewsSection = () => {
                         Latest News
                     </h1>
 
-                    <div className="pt-10 flex flex-col md:flex-row gap-3">
-                        <div className="w-full md:w-1/3 shadow-box rounded-lg">
+                    <div className="pt-10 flex flex-col md:flex-row gap-4 lg:gap-6">
+                        <div className="w-full md:w-1/3 shadow-box rounded-lg bg-white">
                             <div className="relative">
                                 <img
                                     src={news1}
@@ -68,7 +73,7 @@ const NewsSection = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="w-full md:w-1/3 shadow-box rounded-lg">
+                        <div className="w-full md:w-1/3 shadow-box rounded-lg bg-white">
                             <div className="relative">
                                 <img
                                     src={news2}
@@ -117,7 +122,7 @@ const NewsSection = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="w-full md:w-1/3 shadow-box rounded-lg">
+                        <div className="w-full md:w-1/3 shadow-box rounded-lg bg-white">
                             <div className="relative">
                                 <img
                                     src={news3}
