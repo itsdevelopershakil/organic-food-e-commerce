@@ -6,6 +6,8 @@ import img1 from '../assets/images/about/about8.png';
 import img2 from '../assets/images/about/about9.png';
 import QuoteIcon from '../assets/images/about/QuoteIcon';
 import testimonial from '../assets/images/home/testimonial.png';
+import testimonialBg from '../assets/images/home/testimonialBG.png';
+import testimonialBg2 from '../assets/images/home/testimonialBG2.png';
 
 interface ArrowProps {
     onClick?: () => void; // onClick is an optional function
@@ -70,7 +72,10 @@ const TestimonialSection: React.FC = () => {
         ],
     };
     return (
-        <div className="py-18">
+        <div className="py-18 relative">
+            <div className="absolute w-20 bottom-[-5%] left-[12%]">
+                <img src={testimonialBg} alt="" className="object-contain" />
+            </div>
             <div className="max-width">
                 <div>
                     <img
@@ -82,10 +87,13 @@ const TestimonialSection: React.FC = () => {
                         What Our Customer Says
                     </h1>
                 </div>
-                <div className="space-x-4 mt-6 md:mt-12">
+                <div className="space-x-4 mt-6 md:mt-12 relative">
+                    <div className="absolute right-[-5%] top-[-14%]">
+                        <img src={testimonialBg2} alt="" />
+                    </div>
                     <Slider {...settings}>
                         <div className="px-2 md:px-4">
-                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg">
+                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                                 <div className="px-5 py-4">
                                     <QuoteIcon />
                                     <p className="text-[#4D4D4D] text-sm pt-4">
@@ -119,7 +127,7 @@ const TestimonialSection: React.FC = () => {
                             </div>
                         </div>
                         <div className="px-2 md:px-4">
-                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg">
+                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                                 <div className="px-5 py-4">
                                     <QuoteIcon />
                                     <p className="text-[#4D4D4D] text-sm pt-4">
@@ -153,7 +161,7 @@ const TestimonialSection: React.FC = () => {
                             </div>
                         </div>
                         <div className="px-2 md:px-4">
-                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg">
+                            <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                                 <div className="px-5 py-4">
                                     <QuoteIcon />
                                     <p className="text-[#4D4D4D] text-sm pt-4">

@@ -131,7 +131,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <div style={divStyle} className="bg-no-repeat bg-cover">
+            <div style={divStyle} className="bg-no-repeat bg-cover py-2">
                 <div className="max-width relative">
                     <Slider {...settings}>
                         <div>
@@ -257,67 +257,69 @@ const HomePage = () => {
             {/* Feature section start  */}
             <div className="max-width">
                 <div className="flex flex-wrap text-center w-full">
-                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                    <div className="w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
                         <div
-                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            className="bg-no-repeat bg-contain size-14 sm:size-18 flex items-center justify-center group cursor-pointer mx-auto"
                             style={featureStyle(1)}
                             onMouseEnter={() => setActiveIndex(1)}
                             onMouseLeave={() => setActiveIndex(null)}
                         >
-                            <Feature1 className="fill-primary group-hover:fill-white duration-300" />
+                            <Feature1 className="fill-primary group-hover:fill-white duration-300 size-8 sm:size-10" />
                         </div>
-                        <h3 className="pt-4 text-lg font-semibold">
+                        <h3 className="pt-4 sm:text-lg font-semibold">
                             Free Shipping
                         </h3>
-                        <p className="pt-2 text-[#999]">
+                        <p className="text-sm sm:text-base pt-1 sm:pt-2 text-[#999]">
                             Free shipping with discount
                         </p>
                     </div>
-                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                    <div className="w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
                         <div
-                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            className="bg-no-repeat bg-contain size-14 sm:size-18 flex items-center justify-center group cursor-pointer mx-auto"
                             style={featureStyle(2)}
                             onMouseEnter={() => setActiveIndex(2)}
                             onMouseLeave={() => setActiveIndex(null)}
                         >
-                            <Feature2 className="fill-primary group-hover:fill-white duration-300" />
+                            <Feature2 className="fill-primary group-hover:fill-white duration-300 size-8 sm:size-10" />
                         </div>
-                        <h3 className="pt-4 text-lg font-semibold">
+                        <h3 className="pt-4 sm:text-lg font-semibold">
                             Great Support 24/7
                         </h3>
-                        <p className="pt-2 text-[#999]">
+                        <p className="text-sm sm:text-base pt-1 sm:pt-2 text-[#999]">
                             Instant access to Contact
                         </p>
                     </div>
-                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10  border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                    <div className="w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10  border-b-4 border-white hover:border-primary duration-300 shrink-0">
                         <div
-                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            className="bg-no-repeat bg-contain size-14 sm:size-18 flex items-center justify-center group cursor-pointer mx-auto"
                             style={featureStyle(3)}
                             onMouseEnter={() => setActiveIndex(3)}
                             onMouseLeave={() => setActiveIndex(null)}
                         >
-                            <Feature3 className="fill-primary group-hover:text-white duration-300" />
+                            <Feature3 className="fill-primary group-hover:text-white duration-300 size-8 sm:size-10" />
                         </div>
-                        <h3 className="pt-4 text-lg font-semibold">
+                        <h3 className="pt-4 sm:text-lg font-semibold">
                             100% Sucure Payment
                         </h3>
-                        <p className="pt-2 text-[#999]">
+                        <p className="text-sm sm:text-base pt-1 sm:pt-2 text-[#999]">
                             We ensure your money is save
                         </p>
                     </div>
-                    <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
+                    <div className="w-1/2 lg:w-1/4 pt-8 pb-5 sm:py-10 border-b-4 border-white hover:border-primary duration-300 shrink-0">
                         <div
-                            className="bg-no-repeat bg-contain size-18 flex items-center justify-center group cursor-pointer mx-auto"
+                            className="bg-no-repeat bg-contain size-14 sm:size-18 flex items-center justify-center group cursor-pointer mx-auto"
                             style={featureStyle(4)}
                             onMouseEnter={() => setActiveIndex(4)}
                             onMouseLeave={() => setActiveIndex(null)}
                         >
-                            <Feature4 className="fill-primary group-hover:fill-white duration-300" />
+                            <Feature4 className="fill-primary group-hover:fill-white duration-300 size-8 sm:size-10" />
                         </div>
-                        <h3 className="pt-4 text-lg font-semibold">
+                        <h3 className="pt-4 sm:text-lg font-semibold">
                             Money-Back Guarantee
                         </h3>
-                        <p className="pt-2 text-[#999]">30 days money-back</p>
+                        <p className="text-sm sm:text-base pt-1 sm:pt-2 text-[#999]">
+                            30 days money-back
+                        </p>
                     </div>
                 </div>
                 <Divider className="h-px w-full bg-[#CCCCCC]" />

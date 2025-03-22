@@ -7,6 +7,7 @@ import news1 from '../assets/images/home/news1.png';
 import news2 from '../assets/images/home/news2.png';
 import news3 from '../assets/images/home/news3.png';
 import newsBg from '../assets/images/home/newsbg.png';
+import newsBg2 from '../assets/images/home/newsBg2.png';
 import UserIcon from '../assets/images/UserIcon';
 
 const newsBG = {
@@ -24,7 +25,10 @@ const NewsSection = () => {
                     </h1>
 
                     <div className="pt-10 flex flex-col md:flex-row gap-4 lg:gap-6">
-                        <div className="w-full md:w-1/3 shadow-box rounded-lg bg-white">
+                        <div className="w-full md:w-1/3 shadow-box rounded-lg bg-white relative">
+                            <div className="absolute md:top-[-14%] right-[25%]">
+                                <img src={newsBg2} alt="" />
+                            </div>
                             <div className="relative">
                                 <img
                                     src={news1}

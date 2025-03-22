@@ -5,8 +5,8 @@ type FeatureProps = {
 const Feature2: React.FC<FeatureProps> = ({ className }) => {
     return (
         <svg
-            width="34"
-            height="36"
+            // width="34"
+            // height="36"
             viewBox="0 0 34 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
