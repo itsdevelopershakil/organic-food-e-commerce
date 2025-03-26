@@ -182,12 +182,12 @@ const About = () => {
                     </div>
                 </div>
                 {/* Team Section */}
-                <div className="bg-linear-to-r from-[#F2F2F2] to-[#FFFFFF] py-20">
+                <div className="bg-linear-to-r from-[#F2F2F2] to-[#FFFFFF] py-10 md:py-20">
                     <div className="max-width">
                         <h3 className="text-3xl md:text-5xl text-center font-semibold text-[#1A1A1A]">
                             Our Awesome Team
                         </h3>
-                        <p className="pt-2 sm:pt-3 w-full md:w-1/2 mx-auto text-center text-[#666666] mb-0.5">
+                        <p className="pt-2 sm:pt-3 w-full md:w-1/2 mx-auto text-center text-sm sm:text-base text-[#666666] mb-0.5">
                             Pellentesque a ante vulputate leo porttitor luctus
                             sed eget eros. Nulla et rhoncus neque. Duis non diam
                             eget est luctus tincidunt a a mi.
@@ -200,7 +200,7 @@ const About = () => {
             {/* Testimonial section  */}
             <div className="bg-[#F2F2F2]">
                 <div className="max-width py-25">
-                    <h3 className="text-[#1A1A1A] text-3xl md:text-5xl font-semibold px-4 mb-0.5">
+                    <h3 className="text-[#1A1A1A] text-xl sm:text-3xl md:text-5xl font-semibold px-4 mb-0.5">
                         Client Testimonail
                     </h3>
                     <TestimonialSlider />

@@ -14,7 +14,7 @@ interface ArrowProps {
 const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow next absolute top-[-95px]  right-[20px] size-[45px] bg-white hover:bg-primary text-[#1a1a1a] hover:text-white flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
+            className="custom-arrow next absolute top-[-55px] md:top-[-95px] right-0 size-8 md:size-[45px] bg-white hover:bg-primary text-[#1a1a1a] hover:text-white flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
             onClick={onClick}
         >
             <FaArrowRight />
@@ -26,7 +26,7 @@ const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => {
 const CustomPrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
     return (
         <div
-            className="custom-arrow prev absolute top-[-95px] right-[70px] size-[45px] bg-white hover:bg-primary text-[#1a1a1a] hover:text-white flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
+            className="custom-arrow prev absolute top-[-55px] md:top-[-95px] right-[40px] md:right-[60px] size-8 md:size-[45px] bg-white hover:bg-primary text-[#1a1a1a] hover:text-white flex justify-center items-center rounded-full border border-[#E6E6E6] cursor-pointer"
             onClick={onClick}
         >
             <FaArrowLeft />
@@ -44,12 +44,36 @@ const TestimonialSlider: React.FC = () => {
         arrows: true,
         nextArrow: <CustomNextArrow />, // No need to pass onClick manually
         prevArrow: <CustomPrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    infinite: true,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    infinite: true,
+                },
+            },
+            // {
+            //     breakpoint: 360,
+            //     settings: {
+            //         slidesToShow: 3,
+            //         infinite: true,
+            //     },
+            // },
+        ],
     };
+
     return (
-        <div className="space-x-4 mt-12">
+        <div className="space-x-4 mt-6 md:mt-12">
             <Slider {...settings}>
-                <div className="px-4">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-[10px]">
+                <div className="px-2 md:px-4">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                         <div className="px-5 py-4">
                             <QuoteIcon />
                             <p className="text-[#4D4D4D] text-sm pt-4">
@@ -62,15 +86,15 @@ const TestimonialSlider: React.FC = () => {
                                 <div className="flex items-center gap-3 pt-6 pb-2">
                                     <img src={img1} alt="" />
                                     <div>
-                                        <p className="text-[#1a1a1a] font-medium">
+                                        <p className="text-[#1a1a1a] font-medium text-sm md:text-base">
                                             Robert Fox
                                         </p>
-                                        <p className="text-sm text-[#999999]">
+                                        <p className="text-xs md:text-sm text-[#999999]">
                                             Customer
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex *:text-[#FF8A00] *:size-5">
+                                <div className="flex *:text-[#FF8A00] *:size-4">
                                     <TiStar />
                                     <TiStar />
                                     <TiStar />
@@ -81,8 +105,8 @@ const TestimonialSlider: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="px-4">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-[10px]">
+                <div className="px-2 md:px-4">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                         <div className="px-5 py-4">
                             <QuoteIcon />
                             <p className="text-[#4D4D4D] text-sm pt-4">
@@ -95,15 +119,15 @@ const TestimonialSlider: React.FC = () => {
                                 <div className="flex items-center gap-3 pt-6 pb-2">
                                     <img src={img2} alt="" />
                                     <div>
-                                        <p className="text-[#1a1a1a] font-medium">
+                                        <p className="text-[#1a1a1a] font-medium text-sm md:text-base">
                                             Dianne Russell
                                         </p>
-                                        <p className="text-sm text-[#999999]">
+                                        <p className="text-xs md:text-sm text-[#999999]">
                                             Customer
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex *:text-[#FF8A00] *:size-5">
+                                <div className="flex *:text-[#FF8A00] *:size-4">
                                     <TiStar />
                                     <TiStar />
                                     <TiStar />
@@ -114,8 +138,8 @@ const TestimonialSlider: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="px-4">
-                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-[10px]">
+                <div className="px-2 md:px-4">
+                    <div className="hover:shadow-box-sm-hover shadow-box-sm duration-300 cursor-pointer my-2 rounded-lg bg-white">
                         <div className="px-5 py-4">
                             <QuoteIcon />
                             <p className="text-[#4D4D4D] text-sm pt-4">
@@ -128,15 +152,15 @@ const TestimonialSlider: React.FC = () => {
                                 <div className="flex items-center gap-3 pt-6 pb-2">
                                     <img src={img3} alt="" />
                                     <div>
-                                        <p className="text-[#1a1a1a] font-medium">
+                                        <p className="text-[#1a1a1a] font-medium text-sm md:text-base">
                                             Eleanor Pena
                                         </p>
-                                        <p className="text-sm text-[#999999]">
+                                        <p className="text-xs md:text-sm text-[#999999]">
                                             Customer
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex *:text-[#FF8A00] *:size-5">
+                                <div className="flex *:text-[#FF8A00] *:size-4">
                                     <TiStar />
                                     <TiStar />
                                     <TiStar />
